@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 695f1ee097a772f4690e0110591d229e
+guid: 852b6ece5349afc438f67d47388951a2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3559353967117612179
-    second: ANT Concept_0
+      213: -3005758526211007894
+    second: ANT2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,24 +96,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ANT Concept_0
+      name: ANT2_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d6bc318dc62aa9ec0800000000000000
-      internalID: -3559353967117612179
+      spriteID: a6a579cab866946d0800000000000000
+      internalID: -3005758526211007894
       vertices: []
       indices: 
       edges: []
@@ -138,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 8aff2bfca0ae07e40a8022c40bb20e8c
+    spriteID: 0a8c1aec8ec85834f906b5aa86b6ca8e
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ANT Concept_0: -3559353967117612179
+      ANT2_0: -3005758526211007894
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
