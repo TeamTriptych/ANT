@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     float minXLinearVelocity = 0f;
     //maximum possible velocity for either vector. Y uses this value after multiplying it by -1 as its minimum, so that it functions as a max negative velocity for Y.
     float maxLinearVelocity = 1f;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -36,13 +37,13 @@ public class PlayerMovement : MonoBehaviour
             };
             //check key pressed
             string keyPressed = Input.inputString;
-            Debug.Log("just pressed " + keyPressed);
+            //Debug.Log("just pressed " + keyPressed);
             //check if keyPressed matched a leftInput
             for (int currentIndex = 0; currentIndex < leftInputs.Count; currentIndex = currentIndex + 1)
             {
                 if (keyPressed == leftInputs[currentIndex])
                 {
-                    Debug.Log("That was a leftFoot input");
+                    //Debug.Log("That was a leftFoot input");
                     //LEFT FOOT INPUTS SHOULD MOVE UP-RIGHT (pos magnitude to x, pos magnitude to y)
                     this.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector3(moveForce, moveForce, 0));
                 }
@@ -52,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (keyPressed == rightInputs[currentIndex])
                 {
-                    Debug.Log("That was a rightFoot input");
+                    //Debug.Log("That was a rightFoot input");
                     //RIGHT FOOT INPUTS SHOULD MOVE DOWN-RIGHT(pos magnitude to x, neg magnitude to y)
                     this.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector3(moveForce, (moveForce * -1), 0));
                 }
@@ -91,10 +92,11 @@ public class PlayerMovement : MonoBehaviour
             //force yVelocity to 0
             workingLinearVelocity.y = 0;
         }
+
         // -- ASSIGNMENT TO RIGIDBODY --
 
         //actually assign the workingLinearVelocity back to the Rigidbody2D
         this.gameObject.GetComponent<Rigidbody2D>().linearVelocity = workingLinearVelocity;
-        Debug.Log("current linearVelocity is " + workingLinearVelocity);
+        //Debug.Log("current linearVelocity is " + workingLinearVelocity);
     }
 }
