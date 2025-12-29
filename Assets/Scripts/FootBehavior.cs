@@ -5,7 +5,7 @@ public class FootBehavior : MonoBehaviour
     // ref to Game Manager
     GameObject gameManager;
     //bool to determine if this is the left foot or the right foot. true = left, false = right
-    bool isLeftFoot = true;
+    public bool isLeftFoot = true;
     //abstract of the magnitude of the offset from the top of the highest ant that the foot should have its height at
     float yOffsetFromAnt = 1f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created

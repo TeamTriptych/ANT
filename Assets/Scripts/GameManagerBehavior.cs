@@ -31,7 +31,7 @@ public class GameManagerBehavior : MonoBehaviour
             //list of all possible inputs that should trigger the right foot
             List<string> rightInputs = new List<string>()
             {
-                "7", "&", "8", "*", "9", "(", "0", ")", "-", "_", "=", "+", "U", "u", "I", "i", "O", "o", "P", "p", "{", "[", "}", "J", "j", "K", "k", "L", "l", ":", ";", "\"", "'", "N", "n", "M", "m", "<", ",", ">", ".", "?", "/"
+                "7", "8", "9", "0", "-", "=", "u", "i", "o", "p", "[", "]", "j", "k", "l", ";", "'", "n", "m", ",", ".", "/"
             };
             //check key pressed
             string keyPressed = Input.inputString;
@@ -52,7 +52,8 @@ public class GameManagerBehavior : MonoBehaviour
                 if (keyPressed == rightInputs[currentIndex])
                 {
                     Debug.Log("GM detected a rightFoot input");
-                    
+                    //trigger the jump function of the R Ant at the same Index as the input
+                    rightAntsList[currentIndex].GetComponent<AntBehavior>().jump();
                 }
             }
         }
