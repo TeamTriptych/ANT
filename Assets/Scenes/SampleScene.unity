@@ -169,6 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4c099cb37f9e441bbf25d00fbc45c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AntBehavior
+  isLeft: 1
 --- !u!114 &77526340
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,6 +258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4c099cb37f9e441bbf25d00fbc45c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AntBehavior
+  isLeft: 0
 --- !u!114 &99438755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -451,6 +453,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4c099cb37f9e441bbf25d00fbc45c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AntBehavior
+  isLeft: 0
 --- !u!114 &179353542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -539,6 +542,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4c099cb37f9e441bbf25d00fbc45c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AntBehavior
+  isLeft: 1
 --- !u!114 &216630174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -627,6 +631,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4c099cb37f9e441bbf25d00fbc45c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AntBehavior
+  isLeft: 1
 --- !u!114 &248457843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -715,6 +720,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4c099cb37f9e441bbf25d00fbc45c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AntBehavior
+  isLeft: 0
 --- !u!114 &314338918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -878,6 +884,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4c099cb37f9e441bbf25d00fbc45c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AntBehavior
+  isLeft: 0
 --- !u!114 &349536281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -966,6 +973,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4c099cb37f9e441bbf25d00fbc45c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AntBehavior
+  isLeft: 1
 --- !u!114 &358013042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1038,7 +1046,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.000061035156, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &358344484
@@ -1129,6 +1137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4c099cb37f9e441bbf25d00fbc45c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AntBehavior
+  isLeft: 1
 --- !u!114 &413373800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1330,6 +1339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4c099cb37f9e441bbf25d00fbc45c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AntBehavior
+  isLeft: 0
 --- !u!114 &462527233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1524,6 +1534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4c099cb37f9e441bbf25d00fbc45c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AntBehavior
+  isLeft: 1
 --- !u!114 &570508353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1612,6 +1623,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4c099cb37f9e441bbf25d00fbc45c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AntBehavior
+  isLeft: 0
 --- !u!114 &593848452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1700,6 +1712,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4c099cb37f9e441bbf25d00fbc45c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AntBehavior
+  isLeft: 0
 --- !u!114 &620854153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1788,6 +1801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4c099cb37f9e441bbf25d00fbc45c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AntBehavior
+  isLeft: 0
 --- !u!114 &636777343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1876,6 +1890,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4c099cb37f9e441bbf25d00fbc45c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AntBehavior
+  isLeft: 1
 --- !u!114 &638228855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1964,6 +1979,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4c099cb37f9e441bbf25d00fbc45c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AntBehavior
+  isLeft: 0
 --- !u!114 &656799878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2052,6 +2068,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4c099cb37f9e441bbf25d00fbc45c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AntBehavior
+  isLeft: 1
 --- !u!114 &667979943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2140,6 +2157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4c099cb37f9e441bbf25d00fbc45c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AntBehavior
+  isLeft: 1
 --- !u!114 &669521067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2358,7 +2376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dd7b3c41d8db3a4fb4f62250e20c6fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  moveForce: 3
+  maxMoveForce: 3
   frictionFactor: 0.01
 --- !u!114 &731547622
 MonoBehaviour:
@@ -2480,6 +2498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4c099cb37f9e441bbf25d00fbc45c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AntBehavior
+  isLeft: 0
 --- !u!114 &744803428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2568,6 +2587,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4c099cb37f9e441bbf25d00fbc45c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AntBehavior
+  isLeft: 0
 --- !u!114 &757608389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2656,6 +2676,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4c099cb37f9e441bbf25d00fbc45c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AntBehavior
+  isLeft: 1
 --- !u!114 &798524846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2744,6 +2765,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4c099cb37f9e441bbf25d00fbc45c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AntBehavior
+  isLeft: 0
 --- !u!114 &827617663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2832,6 +2854,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4c099cb37f9e441bbf25d00fbc45c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AntBehavior
+  isLeft: 0
 --- !u!114 &844972982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2920,6 +2943,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4c099cb37f9e441bbf25d00fbc45c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AntBehavior
+  isLeft: 0
 --- !u!114 &855526633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3008,6 +3032,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4c099cb37f9e441bbf25d00fbc45c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AntBehavior
+  isLeft: 1
 --- !u!114 &893144053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3188,6 +3213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4c099cb37f9e441bbf25d00fbc45c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AntBehavior
+  isLeft: 0
 --- !u!114 &960329272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3276,6 +3302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4c099cb37f9e441bbf25d00fbc45c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AntBehavior
+  isLeft: 1
 --- !u!114 &976359276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3364,6 +3391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4c099cb37f9e441bbf25d00fbc45c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AntBehavior
+  isLeft: 0
 --- !u!114 &1047274359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3531,6 +3559,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4c099cb37f9e441bbf25d00fbc45c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AntBehavior
+  isLeft: 0
 --- !u!114 &1139010800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3708,6 +3737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4c099cb37f9e441bbf25d00fbc45c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AntBehavior
+  isLeft: 0
 --- !u!114 &1153006974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3796,6 +3826,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4c099cb37f9e441bbf25d00fbc45c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AntBehavior
+  isLeft: 0
 --- !u!114 &1173321373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3884,6 +3915,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4c099cb37f9e441bbf25d00fbc45c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AntBehavior
+  isLeft: 1
 --- !u!114 &1239365643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3972,6 +4004,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4c099cb37f9e441bbf25d00fbc45c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AntBehavior
+  isLeft: 1
 --- !u!114 &1255346728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4209,6 +4242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4c099cb37f9e441bbf25d00fbc45c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AntBehavior
+  isLeft: 1
 --- !u!114 &1440971798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4297,6 +4331,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4c099cb37f9e441bbf25d00fbc45c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AntBehavior
+  isLeft: 1
 --- !u!114 &1495544913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4422,6 +4457,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4c099cb37f9e441bbf25d00fbc45c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AntBehavior
+  isLeft: 1
 --- !u!114 &1532836402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4510,6 +4546,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4c099cb37f9e441bbf25d00fbc45c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AntBehavior
+  isLeft: 1
 --- !u!114 &1593065635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4598,6 +4635,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4c099cb37f9e441bbf25d00fbc45c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AntBehavior
+  isLeft: 0
 --- !u!114 &1638352817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4670,7 +4708,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -0.000061035156, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &1646208779
@@ -4761,6 +4799,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4c099cb37f9e441bbf25d00fbc45c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AntBehavior
+  isLeft: 1
 --- !u!114 &1666123246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4849,6 +4888,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4c099cb37f9e441bbf25d00fbc45c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AntBehavior
+  isLeft: 1
 --- !u!114 &1740876893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5012,6 +5052,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4c099cb37f9e441bbf25d00fbc45c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AntBehavior
+  isLeft: 1
 --- !u!114 &1776627379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5249,6 +5290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4c099cb37f9e441bbf25d00fbc45c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AntBehavior
+  isLeft: 1
 --- !u!114 &1875422793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5502,6 +5544,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4c099cb37f9e441bbf25d00fbc45c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AntBehavior
+  isLeft: 0
 --- !u!114 &2071852936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5649,6 +5692,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4c099cb37f9e441bbf25d00fbc45c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AntBehavior
+  isLeft: 1
 --- !u!114 &2097738264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5737,6 +5781,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4c099cb37f9e441bbf25d00fbc45c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AntBehavior
+  isLeft: 0
 --- !u!114 &2117452070
 MonoBehaviour:
   m_ObjectHideFlags: 0

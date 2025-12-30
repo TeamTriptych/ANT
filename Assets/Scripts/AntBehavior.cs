@@ -16,9 +16,15 @@ public class AntBehavior : MonoBehaviour
     bool isJumping = false;
     //tracks if the Ant should be descending to startingPos.y
     bool isFalling = false;
+    //tracks if this is a leftAnt
+    public bool isLeft = true;
+    //ref to Player
+    GameObject playerObj;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        //assign ref to Player
+        playerObj = GameObject.Find("Player");
         //store starting pos
         startingPos = this.gameObject.GetComponent<RectTransform>().position;
         //calculate destination height
@@ -77,9 +83,25 @@ public class AntBehavior : MonoBehaviour
         isFalling = false;
         //toggle isJumping on so we ascend to destHeight
         isJumping = true;
-        //on jump, we should flip an isJumping bool
-        //start moving from whatever height we're at to the destHeight
-        //then, when we reach destHeight, we should flip a bool so we start descending
-        //then, we should descend until we reach startingPos.y
+        //calculate the difference between destHeight and where we're starting the jump from
+        float currentHeightDif = destHeight - this.gameObject.GetComponent<RectTransform>().position.y;
+        //and abstract the maximum potential difference
+        float maxHeightDif = destHeight - startingPos.y;
+        //abstract a proportion of how close currentHeightDif is to maxHeightDif, putting it in terms between 0 and 1
+        float heightProportion = currentHeightDif / maxHeightDif;
+        //then lerp that proportion between 0 and maxMoveForce to translate it into a proportional magnitude of movement
+        float proportionalForce = Mathf.Lerp(0, playerObj.gameObject.GetComponent<PlayerMovement>().maxMoveForce, heightProportion);
+        //finally, if we an L Ant...
+        if (isLeft == true)
+        {
+            //add the proportional force to the Player, with pos x and pos y
+            playerObj.GetComponent<Rigidbody2D>().AddForce(new Vector2(proportionalForce, proportionalForce));
+        }
+        //else if we are an R Ant...
+        else
+        {
+            //add the proportional force to the player, with pos x and neg y
+            playerObj.GetComponent<Rigidbody2D>().AddForce(new Vector2(proportionalForce, (proportionalForce * -1)));
+        }
     }
 }
