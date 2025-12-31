@@ -7,7 +7,7 @@ public class AntBehavior : MonoBehaviour
     //the maximum height that an Ant can jump from its starting position
     float jumpOffset = 15f;
     //the speed at which the Ant moves up and down
-    float yVelocity = 1f;
+    float yVelocity = .75f;
     //ref to the Ant's starting position. Set during Start()
     Vector3 startingPos;
     //abstraction of the destination height for the ant to jump to. Calculated during Start()
@@ -83,25 +83,47 @@ public class AntBehavior : MonoBehaviour
         isFalling = false;
         //toggle isJumping on so we ascend to destHeight
         isJumping = true;
-        //calculate the difference between destHeight and where we're starting the jump from
-        float currentHeightDif = destHeight - this.gameObject.GetComponent<RectTransform>().position.y;
-        //and abstract the maximum potential difference
-        float maxHeightDif = destHeight - startingPos.y;
-        //abstract a proportion of how close currentHeightDif is to maxHeightDif, putting it in terms between 0 and 1
-        float heightProportion = currentHeightDif / maxHeightDif;
-        //then lerp that proportion between 0 and maxMoveForce to translate it into a proportional magnitude of movement
-        float proportionalForce = Mathf.Lerp(0, playerObj.gameObject.GetComponent<PlayerMovement>().maxMoveForce, heightProportion);
-        //finally, if we an L Ant...
-        if (isLeft == true)
+
+        //if movement system is not reactive
+        if (playerObj.GetComponent<PlayerMovement>().fixedMovement == true)
         {
-            //add the proportional force to the Player, with pos x and pos y
-            playerObj.GetComponent<Rigidbody2D>().AddForce(new Vector2(proportionalForce, proportionalForce));
+            //If ant is a left ant
+            if (isLeft == true)
+            {
+                //add a fixed pos velocity to x and pos velocity x
+                playerObj.GetComponent<Rigidbody2D>().AddForce(new Vector2(playerObj.GetComponent<PlayerMovement>().maxMoveForce, playerObj.GetComponent<PlayerMovement>().maxMoveForce));
+            }
+            //if ant is a right ant
+            else
+            {
+                //add a fixed pos velocity to x and neg velocity to y
+                playerObj.GetComponent<Rigidbody2D>().AddForce(new Vector2(playerObj.GetComponent<PlayerMovement>().maxMoveForce, playerObj.GetComponent<PlayerMovement>().maxMoveForce * -1));
+            }
         }
-        //else if we are an R Ant...
+        //if movement system is reactive
         else
         {
-            //add the proportional force to the player, with pos x and neg y
-            playerObj.GetComponent<Rigidbody2D>().AddForce(new Vector2(proportionalForce, (proportionalForce * -1)));
+            //calculate the difference between destHeight and where we're starting the jump from
+            float currentHeightDif = destHeight - this.gameObject.GetComponent<RectTransform>().position.y;
+            //and abstract the maximum potential difference
+            float maxHeightDif = destHeight - startingPos.y;
+            //abstract a proportion of how close currentHeightDif is to maxHeightDif, putting it in terms between 0 and 1
+            float heightProportion = currentHeightDif / maxHeightDif;
+            //then lerp that proportion between 0 and maxMoveForce to translate it into a proportional magnitude of movement
+            float proportionalForce = Mathf.Lerp(0, playerObj.gameObject.GetComponent<PlayerMovement>().maxMoveForce, heightProportion);
+            //finally, if we an L Ant...
+            if (isLeft == true)
+            {
+                //add the proportional force to the Player, with pos x and pos y
+                playerObj.GetComponent<Rigidbody2D>().AddForce(new Vector2(proportionalForce, proportionalForce));
+            }
+            //else if we are an R Ant...
+            else
+            {
+                //add the proportional force to the player, with pos x and neg y
+                playerObj.GetComponent<Rigidbody2D>().AddForce(new Vector2(proportionalForce, (proportionalForce * -1)));
+            }
         }
+
     }
 }

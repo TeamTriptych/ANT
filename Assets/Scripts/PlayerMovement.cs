@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     GameObject gameManager;
     //stores the last input parsed as a string
     string keyPressed;
+    //This boolean determines if movement is fixed (provides a static force factor when input is registered), or dynamic (ants provide less force the closer they are to the apex of their jump)
+    public bool fixedMovement = false;
     //list of all possible inputs that should trigger the left foot
     List<string> leftInputs = new List<string>()
             {
@@ -42,7 +44,12 @@ public class PlayerMovement : MonoBehaviour
             //store key pressed
             keyPressed = Input.inputString;
             Debug.Log("just pressed " + keyPressed);
-            
+        }
+        //assign to null if key was released. Safe on null. Safe on more than one key press.
+        if (keyPressed != null && keyPressed.Length == 1 && Input.GetKeyUp(keyPressed))
+        {
+            Debug.Log("just released " + keyPressed);
+            keyPressed = null;
         }
     }
     private void FixedUpdate()

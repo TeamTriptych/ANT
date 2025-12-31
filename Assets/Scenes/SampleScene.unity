@@ -2378,6 +2378,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   maxMoveForce: 3
   frictionFactor: 0.01
+  fixedMovement: 1
 --- !u!114 &731547622
 MonoBehaviour:
   m_ObjectHideFlags: 0
