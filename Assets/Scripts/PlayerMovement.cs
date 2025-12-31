@@ -12,6 +12,18 @@ public class PlayerMovement : MonoBehaviour
     float maxLinearVelocity = 1f;
     //ref to game manager
     GameObject gameManager;
+    //stores the last input parsed as a string
+    string keyPressed;
+    //list of all possible inputs that should trigger the left foot
+    List<string> leftInputs = new List<string>()
+            {
+                "1", "2", "3", "4", "5", "6", "q", "w", "e", "r", "t", "y", "a", "s", "d", "f", "g", "h", "z", "x", "c", "v", "b"
+            };
+    //list of all possible inputs that should trigger the right foot
+    List<string> rightInputs = new List<string>()
+            {
+                "7", "8", "9", "0", "-", "=", "u", "i", "o", "p", "[", "]", "j", "k", "l", ";", "'", "n", "m", ",", ".", "/"
+            };
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -27,47 +39,39 @@ public class PlayerMovement : MonoBehaviour
         //check for any key
         if (Input.anyKeyDown == true)
         {
-            //list of all possible inputs that should trigger the left foot
-            List<string> leftInputs = new List<string>()
-            {
-                "1", "2", "3", "4", "5", "6", "q", "w", "e", "r", "t", "y", "a", "s", "d", "f", "g", "h", "z", "x", "c", "v", "b"
-            };
-            //list of all possible inputs that should trigger the right foot
-            List<string> rightInputs = new List<string>()
-            {
-                "7", "8", "9", "0", "-", "=", "u", "i", "o", "p", "[", "]", "j", "k", "l", ";", "'", "n", "m", ",", ".", "/"
-            };
-            //check key pressed
-            string keyPressed = Input.inputString;
+            //store key pressed
+            keyPressed = Input.inputString;
             Debug.Log("just pressed " + keyPressed);
-            //check if keyPressed matched a leftInput
-            for (int currentIndex = 0; currentIndex < leftInputs.Count; currentIndex = currentIndex + 1)
-            {
-                if (keyPressed == leftInputs[currentIndex])
-                {
-                    Debug.Log("detected a leftFoot input");
-                    //if y velocity is currently negative, clamp it to 0 min
-                    this.gameObject.GetComponent<Rigidbody2D>().linearVelocityY = Mathf.Clamp(this.gameObject.GetComponent<Rigidbody2D>().linearVelocityY, 0, maxLinearVelocity);
-                    //trigger the jump function of the L Ant at the same Index as the input
-                    gameManager.GetComponent<GameManagerBehavior>().leftAntsList[currentIndex].GetComponent<AntBehavior>().jump();
-                }
-            }
-            //check if keyPressed matched a rightInput
-            for (int currentIndex = 0; currentIndex < rightInputs.Count; currentIndex = currentIndex + 1)
-            {
-                if (keyPressed == rightInputs[currentIndex])
-                {
-                    Debug.Log("detected a rightFoot input");
-                    //if y velocity is currently pos, clamp it to 0 max
-                    this.gameObject.GetComponent<Rigidbody2D>().linearVelocityY = Mathf.Clamp(this.gameObject.GetComponent<Rigidbody2D>().linearVelocityY, maxLinearVelocity * -1, 0);
-                    //trigger the jump function of the R Ant at the same Index as the input
-                    gameManager.GetComponent<GameManagerBehavior>().rightAntsList[currentIndex].GetComponent<AntBehavior>().jump();
-                }
-            }
+            
         }
     }
     private void FixedUpdate()
     {
+        //check if keyPressed matched a leftInput
+        for (int currentIndex = 0; currentIndex < leftInputs.Count; currentIndex = currentIndex + 1)
+        {
+            if (keyPressed == leftInputs[currentIndex])
+            {
+                Debug.Log("detected a leftFoot input");
+                //if y velocity is currently negative, clamp it to 0 min
+                this.gameObject.GetComponent<Rigidbody2D>().linearVelocityY = Mathf.Clamp(this.gameObject.GetComponent<Rigidbody2D>().linearVelocityY, 0, maxLinearVelocity);
+                //trigger the jump function of the L Ant at the same Index as the input
+                gameManager.GetComponent<GameManagerBehavior>().leftAntsList[currentIndex].GetComponent<AntBehavior>().jump();
+            }
+        }
+        //check if keyPressed matched a rightInput
+        for (int currentIndex = 0; currentIndex < rightInputs.Count; currentIndex = currentIndex + 1)
+        {
+            if (keyPressed == rightInputs[currentIndex])
+            {
+                Debug.Log("detected a rightFoot input");
+                //if y velocity is currently pos, clamp it to 0 max
+                this.gameObject.GetComponent<Rigidbody2D>().linearVelocityY = Mathf.Clamp(this.gameObject.GetComponent<Rigidbody2D>().linearVelocityY, maxLinearVelocity * -1, 0);
+                //trigger the jump function of the R Ant at the same Index as the input
+                gameManager.GetComponent<GameManagerBehavior>().rightAntsList[currentIndex].GetComponent<AntBehavior>().jump();
+            }
+        }
+
         //abstract current linearVelocity. This value is then directly modified before finally being assigned back into the actual rigidbody.
         Vector2 workingLinearVelocity = this.gameObject.GetComponent<Rigidbody2D>().linearVelocity;
         Debug.Log("current linear velocity is " + workingLinearVelocity);
