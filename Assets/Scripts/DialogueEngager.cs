@@ -19,17 +19,24 @@ public class DialogueEngager : MonoBehaviour
     public GameObject dialogueObjGroup;
     //list of all UI DialogueBGs that should be triggered. assigned in-editor.
     public List<GameObject> dialogueBGObjs = new List<GameObject>();
+    //list of all UI DialogueBGFrames that should be triggered. assigned in-editor.
+    public List<GameObject> dialogueBGFrameObjs = new List<GameObject>();
     //list of all the UI Dialogue Text Objs that should be triggered. assigned in-editor.
     public List<GameObject> dialogueTextObjs = new List<GameObject>();
     //public ref to the Dialogue Sprite for this Obstacle. Shown during collision, hidden during final instance of advanceDialogue().
     public GameObject dialogueSprite;
     //acts as a public Index for iterating over the DialogueObjs List. Starts at 0, reset by advanceDialogue.
     int currentDialogueObjIndex = 0;
+    Animator dialogueAnimator;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         //assign ref to game manager
         gameManager = GameObject.Find("GameManager");
+        
+        //assign ref to dialogue animator from the object group
+        dialogueAnimator = dialogueObjGroup.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -73,7 +80,7 @@ public class DialogueEngager : MonoBehaviour
         //else, increment and show the next dialogue
         else
         {
-            //hide text and BG for current Dialogue
+            //hide text, frame, and BG for current Dialogue
             hideDialogue(currentDialogueObjIndex);
             //increment the dialogueObj Index
             currentDialogueObjIndex = currentDialogueObjIndex + 1;
@@ -87,6 +94,8 @@ public class DialogueEngager : MonoBehaviour
     {
         //show the current dialogue BG 
         dialogueBGObjs[currentDialogueObjIndex].GetComponent<Image>().enabled = true;
+        //show the current dialogue BG Frame
+        dialogueBGFrameObjs[currentDialogueObjIndex].GetComponent<Image>().enabled = true;
         //show the current dialogue Text
         dialogueTextObjs[currentDialogueObjIndex].GetComponent<TextMeshProUGUI>().enabled = true;
     }
@@ -95,6 +104,8 @@ public class DialogueEngager : MonoBehaviour
     {
         //hide the current dialogue BG
         dialogueBGObjs[currentDialogueObjIndex].GetComponent<Image>().enabled = false;
+        //hide the current dialogue BG Frame
+        dialogueBGFrameObjs[currentDialogueObjIndex].GetComponent<Image>().enabled = false;
         //hide the current dialogue Text
         dialogueTextObjs[currentDialogueObjIndex].GetComponent<TextMeshProUGUI>().enabled = false;
     }
@@ -104,14 +115,16 @@ public class DialogueEngager : MonoBehaviour
 
     public void animateUpDialogue()
     {
-        //animate the dialogueObjGroup, and the Dialogue Sprite if wished
+        //play animation that "slides" the dialogue box up from behind the HUD
+        dialogueAnimator.Play("DialogueBoxUp");
+    
     }
     /* Handles moving all relevant dialogue boxes below off the screen as a group. Only called one time, after the last call to advanceDialogue(). This ensures that the animation effects all dialogues
      * regardless of which is actually being displayed, allowing the player to mash through text during the animation. We could also flip a bool here if we don't want to allow mashing
      * until the animation completes.*/
     public void animateDownDialogue()
     {
-        //for now, this simply hides the Dialogue so that it leaves the screen. This line can be safely replaced with an animation.
-        hideDialogue(currentDialogueObjIndex);
+        //play animation that "slides" the dialogue box down behind the HUD
+        dialogueAnimator.Play("DialogueBoxDown");
     }
 }
