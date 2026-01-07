@@ -2,6 +2,11 @@ using UnityEngine;
 using System.Collections.Generic;
 public class PlayerMovement : MonoBehaviour
 {
+    //ref to singleton
+    GameManagerBehavior gameManager;
+
+    // -- MOVEMENT --
+
     //an abstraction of the maximum force possibly applied during each movement. This force is applied to x and y axes during movement.
     public float maxMoveForce = 3f;
     //abstraction of the degree to which all velocity is passively reduced every frame.
@@ -10,27 +15,33 @@ public class PlayerMovement : MonoBehaviour
     float minXLinearVelocity = 0f;
     //maximum possible velocity for either vector. Y uses this value after multiplying it by -1 as its minimum, so that it functions as a max negative velocity for Y.
     float maxLinearVelocity = 1f;
-    //ref to game manager
-    GameObject gameManager;
-    //stores the last input parsed as a string
-    string keyPressed;
     //This boolean determines if movement is fixed (provides a static force factor when input is registered), or dynamic (ants provide less force the closer they are to the apex of their jump)
     public bool fixedMovement = false;
+
+    // -- INPUT --
+
+    //stores the last input parsed as a string
+    string keyPressed;
+    //public List that holds all Left Foot Ants
+    public List<GameObject> leftAntsList = new List<GameObject>();
+    //public List that holds all Right Foot Ants
+    public List<GameObject> rightAntsList = new List<GameObject>();
     //list of all possible inputs that should trigger the left foot
     List<string> leftInputs = new List<string>()
-            {
-                "1", "2", "3", "4", "5", "6", "q", "w", "e", "r", "t", "y", "a", "s", "d", "f", "g", "h", "z", "x", "c", "v", "b"
-            };
+    {
+        "1", "2", "3", "4", "5", "6", "q", "w", "e", "r", "t", "y", "a", "s", "d", "f", "g", "h", "z", "x", "c", "v", "b"
+    };
     //list of all possible inputs that should trigger the right foot
     List<string> rightInputs = new List<string>()
-            {
-                "7", "8", "9", "0", "-", "=", "u", "i", "o", "p", "[", "]", "j", "k", "l", ";", "'", "n", "m", ",", ".", "/"
-            };
+    {
+        "7", "8", "9", "0", "-", "=", "u", "i", "o", "p", "[", "]", "j", "k", "l", ";", "'", "n", "m", ",", ".", "/"
+    };
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //assign ref to game manager
-        gameManager = GameObject.Find("GameManager");
+        //assign ref to the singleton
+        gameManager = GameManagerBehavior.singleton;
     }
 
     // Update is called once per frame
@@ -85,7 +96,7 @@ public class PlayerMovement : MonoBehaviour
                     //if y velocity is currently negative, clamp it to 0 min
                     this.gameObject.GetComponent<Rigidbody2D>().linearVelocityY = Mathf.Clamp(this.gameObject.GetComponent<Rigidbody2D>().linearVelocityY, 0, maxLinearVelocity);
                     //trigger the jump function of the L Ant at the same Index as the input
-                    gameManager.GetComponent<GameManagerBehavior>().leftAntsList[currentIndex].GetComponent<AntBehavior>().jump();
+                    leftAntsList[currentIndex].GetComponent<AntBehavior>().jump();
                 }
             }
             //check if keyPressed matched a rightInput
@@ -97,7 +108,7 @@ public class PlayerMovement : MonoBehaviour
                     //if y velocity is currently pos, clamp it to 0 max
                     this.gameObject.GetComponent<Rigidbody2D>().linearVelocityY = Mathf.Clamp(this.gameObject.GetComponent<Rigidbody2D>().linearVelocityY, maxLinearVelocity * -1, 0);
                     //trigger the jump function of the R Ant at the same Index as the input
-                    gameManager.GetComponent<GameManagerBehavior>().rightAntsList[currentIndex].GetComponent<AntBehavior>().jump();
+                    rightAntsList[currentIndex].GetComponent<AntBehavior>().jump();
                 }
             }
             //finally, after parsing input, set the keyPressed to null to prevent spam

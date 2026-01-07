@@ -8,10 +8,6 @@ public class GameManagerBehavior : MonoBehaviour
     public static GameManagerBehavior singleton = null;
     //public variable that tracks frames since game start
     public int frameCounter = 0;
-    //public List that holds all Left Foot Ants
-    public List<GameObject> leftAntsList = new List<GameObject>();
-    //public List that holds all Right Foot Ants
-    public List<GameObject> rightAntsList = new List<GameObject>();
 
     // -- DIALOGUE-RELATED --
 

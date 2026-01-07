@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 24180135}
   - component: {fileID: 24180134}
   m_Layer: 5
-  m_Name: GirlOne
+  m_Name: GirlOneUISprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1663,7 +1663,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 791336545582589345, guid: 67fe7b59389272646810979de422f52e, type: 3}
+  m_Sprite: {fileID: 791336545582589345, guid: e4acca1d8034f7a46ae6224400a96aa6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1782,7 +1782,7 @@ GameObject:
   - component: {fileID: 470140972}
   - component: {fileID: 470140971}
   m_Layer: 5
-  m_Name: DogOne
+  m_Name: DogOneUISprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2564,7 +2564,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 791336545582589345, guid: 67fe7b59389272646810979de422f52e, type: 3}
+  m_Sprite: {fileID: 791336545582589345, guid: e4acca1d8034f7a46ae6224400a96aa6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3207,9 +3207,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dd7b3c41d8db3a4fb4f62250e20c6fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  maxMoveForce: 5
+  maxMoveForce: 7
   frictionFactor: 0.01
-  fixedMovement: 1
+  fixedMovement: 0
+  leftAntsList:
+  - {fileID: 1740876890}
+  - {fileID: 1666123243}
+  - {fileID: 1239365640}
+  - {fileID: 570508350}
+  - {fileID: 413373797}
+  - {fileID: 1875422790}
+  - {fileID: 798524843}
+  - {fileID: 2097738261}
+  - {fileID: 248457840}
+  - {fileID: 1776627376}
+  - {fileID: 1255346725}
+  - {fileID: 77526337}
+  - {fileID: 669521064}
+  - {fileID: 358013039}
+  - {fileID: 1440971795}
+  - {fileID: 667979940}
+  - {fileID: 1532836399}
+  - {fileID: 216630171}
+  - {fileID: 638228852}
+  - {fileID: 1593065632}
+  - {fileID: 893144050}
+  - {fileID: 976359273}
+  - {fileID: 1495544910}
+  rightAntsList:
+  - {fileID: 960329269}
+  - {fileID: 827617660}
+  - {fileID: 620854150}
+  - {fileID: 757608386}
+  - {fileID: 656799875}
+  - {fileID: 2071852933}
+  - {fileID: 593848449}
+  - {fileID: 744803425}
+  - {fileID: 1139010797}
+  - {fileID: 844972979}
+  - {fileID: 179353539}
+  - {fileID: 99438752}
+  - {fileID: 314338915}
+  - {fileID: 349536278}
+  - {fileID: 1153006971}
+  - {fileID: 462527230}
+  - {fileID: 636777340}
+  - {fileID: 2117452067}
+  - {fileID: 1047274356}
+  - {fileID: 1173321370}
+  - {fileID: 1638352814}
+  - {fileID: 855526630}
 --- !u!114 &731547622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4016,100 +4063,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 893144050}
   m_CullTransparentMesh: 1
---- !u!1 &930783562
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 930783564}
-  - component: {fileID: 930783563}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &930783563
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 930783562}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4e383faba5f079429369fcad990bd6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GameManagerBehavior
-  frameCounter: 0
-  leftAntsList:
-  - {fileID: 1740876890}
-  - {fileID: 1666123243}
-  - {fileID: 1239365640}
-  - {fileID: 570508350}
-  - {fileID: 413373797}
-  - {fileID: 1875422790}
-  - {fileID: 798524843}
-  - {fileID: 2097738261}
-  - {fileID: 248457840}
-  - {fileID: 1776627376}
-  - {fileID: 1255346725}
-  - {fileID: 77526337}
-  - {fileID: 669521064}
-  - {fileID: 358013039}
-  - {fileID: 1440971795}
-  - {fileID: 667979940}
-  - {fileID: 1532836399}
-  - {fileID: 216630171}
-  - {fileID: 638228852}
-  - {fileID: 1593065632}
-  - {fileID: 893144050}
-  - {fileID: 976359273}
-  - {fileID: 1495544910}
-  rightAntsList:
-  - {fileID: 960329269}
-  - {fileID: 827617660}
-  - {fileID: 620854150}
-  - {fileID: 757608386}
-  - {fileID: 656799875}
-  - {fileID: 2071852933}
-  - {fileID: 593848449}
-  - {fileID: 744803425}
-  - {fileID: 1139010797}
-  - {fileID: 844972979}
-  - {fileID: 179353539}
-  - {fileID: 99438752}
-  - {fileID: 314338915}
-  - {fileID: 349536278}
-  - {fileID: 1153006971}
-  - {fileID: 462527230}
-  - {fileID: 636777340}
-  - {fileID: 2117452067}
-  - {fileID: 1047274356}
-  - {fileID: 1173321370}
-  - {fileID: 1638352814}
-  - {fileID: 855526630}
-  inDialogue: 0
-  activeDialogueEngager: {fileID: 0}
---- !u!4 &930783564
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 930783562}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.18192, y: -0.9522, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &960329269
 GameObject:
   m_ObjectHideFlags: 0
@@ -6157,7 +6110,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 791336545582589345, guid: 67fe7b59389272646810979de422f52e, type: 3}
+  m_Sprite: {fileID: 791336545582589345, guid: e4acca1d8034f7a46ae6224400a96aa6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6185,7 +6138,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1433137907}
   m_Layer: 5
-  m_Name: GirlOne3
+  m_Name: DogOne3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6838,7 +6791,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1557013538026691241, guid: 071462c2cbfe5cc4e8e19da02ab5c4c6, type: 3}
+  m_Sprite: {fileID: -1557013538026691241, guid: aca18179373e0d9489a36760c24dd31f, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -7196,7 +7149,7 @@ GameObject:
   - component: {fileID: 1652069748}
   - component: {fileID: 1652069747}
   m_Layer: 5
-  m_Name: GirlOne3BG
+  m_Name: DogOne3BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7884,7 +7837,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 791336545582589345, guid: 67fe7b59389272646810979de422f52e, type: 3}
+  m_Sprite: {fileID: 791336545582589345, guid: e4acca1d8034f7a46ae6224400a96aa6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8622,7 +8575,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 791336545582589345, guid: 67fe7b59389272646810979de422f52e, type: 3}
+  m_Sprite: {fileID: 791336545582589345, guid: e4acca1d8034f7a46ae6224400a96aa6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8793,7 +8746,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 791336545582589345, guid: 67fe7b59389272646810979de422f52e, type: 3}
+  m_Sprite: {fileID: 791336545582589345, guid: e4acca1d8034f7a46ae6224400a96aa6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8993,7 +8946,6 @@ CanvasRenderer:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 930783564}
   - {fileID: 519420032}
   - {fileID: 2022058824}
   - {fileID: 731547618}

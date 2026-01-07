@@ -2,8 +2,10 @@ using UnityEngine;
 using System.Collections.Generic;
 public class FootBehavior : MonoBehaviour
 {
-    // ref to Game Manager
-    GameObject gameManager;
+    // ref to singleton
+    GameManagerBehavior gameManager;
+    //ref to player
+    GameObject player;
     //bool to determine if this is the left foot or the right foot. true = left, false = right
     public bool isLeftFoot = true;
     //abstract of the magnitude of the offset from the top of the highest ant that the foot should have its height at
@@ -11,8 +13,10 @@ public class FootBehavior : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //assign ref to gm
-        gameManager = GameObject.Find("GameManager");
+        //assign ref to singleton
+        gameManager = GameManagerBehavior.singleton;
+        //assign ref to player
+        player = GameObject.Find("Player");
     }
 
     // Update is called once per frame
@@ -24,7 +28,7 @@ public class FootBehavior : MonoBehaviour
         if (isLeftFoot == true)
         {
             //abstract a ref to the leftAntsList for easier referencing
-            List<GameObject> leftList = gameManager.GetComponent<GameManagerBehavior>().leftAntsList;
+            List<GameObject> leftList = player.GetComponent<PlayerMovement>().leftAntsList;
             //temp var to store the highest ant yPos
             float highestAntYPos = 0f;
             //iterate over leftAntList, and store that ant's yPos if it's greater than the current yPos
@@ -44,7 +48,7 @@ public class FootBehavior : MonoBehaviour
         else
         {
             //abstract a ref to the rightAntsList for easier referencing
-            List<GameObject> rightList = gameManager.GetComponent<GameManagerBehavior>().rightAntsList;
+            List<GameObject> rightList = player.GetComponent<PlayerMovement>().rightAntsList;
             //temp var to store the highest ant yPos
             float highestAntYPos = 0f;
             //iterate over leftAntList, and store that ant's yPos if it's greater than the current yPos
