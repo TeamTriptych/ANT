@@ -51,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("just pressed " + keyPressed);
         }
         //assign to null if key was released. Safe on null. Safe on more than one key press.
-        if (keyPressed != null && keyPressed.Length == 1 && Input.GetKeyUp(keyPressed))
+        if (keyPressed != null && keyPressed.Length == 1 && Input.GetKeyUp(keyPressed.ToLower()))
         {
             Debug.Log("just released " + keyPressed);
             keyPressed = null;
@@ -79,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
             //check if keyPressed matched a leftInput
             for (int currentIndex = 0; currentIndex < leftInputs.Count; currentIndex = currentIndex + 1)
             {
-                if (keyPressed == leftInputs[currentIndex])
+                if (keyPressed == leftInputs[currentIndex] || keyPressed == leftInputs[currentIndex].ToUpper())
                 {
                     Debug.Log("detected a leftFoot input");
                     //if y velocity is currently negative, clamp it to 0 min
@@ -91,7 +91,7 @@ public class PlayerMovement : MonoBehaviour
             //check if keyPressed matched a rightInput
             for (int currentIndex = 0; currentIndex < rightInputs.Count; currentIndex = currentIndex + 1)
             {
-                if (keyPressed == rightInputs[currentIndex])
+                if (keyPressed == rightInputs[currentIndex] || keyPressed == rightInputs[currentIndex].ToUpper())
                 {
                     Debug.Log("detected a rightFoot input");
                     //if y velocity is currently pos, clamp it to 0 max
