@@ -33,4 +33,9 @@ public class ButtonBehaviors : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
 
     }
+    //loads intro manga scene
+    public void LoadIntroMangaScene()
+    {
+        SceneManager.LoadScene("IntroManga");
+    }
 }

@@ -4,26 +4,33 @@ using UnityEngine;
 public class TimerBehavior : MonoBehaviour
 {
     //ref to the GameManager
-    GameObject gameManager;
+    GameManagerBehavior gameManager;
     //variable for tracking total amount of seconds elapsed since game start. Incremented using gameManager's frameCounter
     int secondsElapsed = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         //assign ref to game Manager
-        gameManager = GameObject.Find("GameManager");
+        gameManager = GameManagerBehavior.singleton;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
         //if 60 frames have passed, update secondsElapsed
-        if (gameManager.GetComponent<GameManagerBehavior>().frameCounter % 60 == 0)
+        if (gameManager.frameCounter % 60 == 0)
         {
             secondsElapsed = secondsElapsed + 1;
         }
         //finally, update the timer display according to secondsElapsed
         this.gameObject.GetComponent<TextMeshProUGUI>().text = formatSecondsToTime(secondsElapsed);
+        //and store that time in the gameManager
+        gameManager.finalTime = formatSecondsToTime(secondsElapsed);
+
+        // -- TOAST INTEGRITY --
+        
+        //write current toast integrity to the game manager
+        gameManager.toastIntegrity = currentToastIntegrity();
     }
     string formatSecondsToTime(int totalSeconds)
     {
@@ -47,5 +54,19 @@ public class TimerBehavior : MonoBehaviour
         string timeToDisplay = minutesToDisplay + ":" + secondsToDisplay;
         //finally, return the time to display
         return timeToDisplay;
+    }
+    float currentToastIntegrity()
+    {
+        //start at 1
+        float baseIntegrity = 1;
+        Debug.Log("secondsElapsed is " + secondsElapsed + " and targetTimeInSeconds is " + gameManager.targetTimeInSeconds);
+        //find the relationship of how close to 0 integrity we are (targetTimeInSeconds / secondsElapsed)
+        float percentDecayed = secondsElapsed / gameManager.targetTimeInSeconds;
+        Debug.Log("calculated percentDecayed as " + percentDecayed);
+        //subtract that proportion from 1 to find our current "integrity" as a percent
+        float currentIntegrity = baseIntegrity - percentDecayed;
+        Debug.Log("calculated currentIntegity as " + currentIntegrity);
+        //multiply currentIntegrity by 100 to make it a whole number between 0-100, then discard any decimal parts left
+        return currentIntegrity;
     }
 }

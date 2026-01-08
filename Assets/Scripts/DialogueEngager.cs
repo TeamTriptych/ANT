@@ -11,7 +11,7 @@ public class DialogueEngager : MonoBehaviour
     // -- REFERENCES --
 
     //ref to game manager
-    GameObject gameManager;
+    GameManagerBehavior gameManager;
 
     // -- DIALOGUE --
 
@@ -27,31 +27,36 @@ public class DialogueEngager : MonoBehaviour
     public GameObject dialogueSprite;
     //acts as a public Index for iterating over the DialogueObjs List. Starts at 0, reset by advanceDialogue.
     int currentDialogueObjIndex = 0;
+    //ref to Animator component on the dialogue Obj
     Animator dialogueAnimator;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         //assign ref to game manager
-        gameManager = GameObject.Find("GameManager");
+        gameManager = GameManagerBehavior.singleton;
         
         //assign ref to dialogue animator from the object group
         dialogueAnimator = dialogueObjGroup.GetComponent<Animator>();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        Debug.Log("The length of the animator's current state is " + dialogueAnimator.GetCurrentAnimatorStateInfo(0).length);
+        Debug.Log("The normalized time of the animator's current state is " + dialogueAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime);
+        Debug.Log("The speed multiplier of the animator's current state is " + dialogueAnimator.GetCurrentAnimatorStateInfo(0).speedMultiplier);
+
+
     }
 
     //collision function
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //flip inDialogue to true
-        gameManager.GetComponent<GameManagerBehavior>().inDialogue = true;
+        gameManager.inDialogue = true;
         //store self as the active DialogueEngager
-        gameManager.GetComponent<GameManagerBehavior>().activeDialogueEngager = this;
+        gameManager.activeDialogueEngager = this;
         //show the first dialogue and text
         showDialogue(currentDialogueObjIndex);
         //show the dialogue Sprite
@@ -67,9 +72,9 @@ public class DialogueEngager : MonoBehaviour
         if (currentDialogueObjIndex == dialogueBGObjs.Count - 1)
         {
             //...then flip inDialogue off
-            gameManager.GetComponent<GameManagerBehavior>().inDialogue = false;
+            gameManager.inDialogue = false;
             //and set activeDialogueEngager to null
-            gameManager.GetComponent<GameManagerBehavior>().activeDialogueEngager = null;
+            gameManager.activeDialogueEngager = null;
             //and turn off the collision for this Obstacle
             this.gameObject.GetComponent<BoxCollider2D>().enabled = false;
             //and hide the dialogue sprite

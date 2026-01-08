@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     //the minimum possible velocity for the X Vector. Should be 0 so we never go backwards.
     float minXLinearVelocity = 0f;
     //maximum possible velocity for either vector. Y uses this value after multiplying it by -1 as its minimum, so that it functions as a max negative velocity for Y.
-    float maxLinearVelocity = 1f;
+    float maxLinearVelocity = 1.25f;
     //This boolean determines if movement is fixed (provides a static force factor when input is registered), or dynamic (ants provide less force the closer they are to the apex of their jump)
     public bool fixedMovement = false;
 
@@ -73,13 +73,13 @@ public class PlayerMovement : MonoBehaviour
         // -- PARSING THE POLLED INPUT --
 
         //If we are in dialogue, parse input for dialogue
-        if (gameManager.GetComponent<GameManagerBehavior>().inDialogue == true)
+        if (gameManager.inDialogue == true)
         {
             //As long as key pressed is not null
             if (keyPressed != null)
             {
                 //advance whatever dialogue is currently up
-                gameManager.GetComponent<GameManagerBehavior>().activeDialogueEngager.advanceDialogue();
+                gameManager.activeDialogueEngager.advanceDialogue();
                 //then set the keypressed to null to prevent spam
                 keyPressed = null;
             }
