@@ -6,7 +6,7 @@ public class TimerBehavior : MonoBehaviour
     //ref to the GameManager
     GameManagerBehavior gameManager;
     //variable for tracking total amount of seconds elapsed since game start. Incremented using gameManager's frameCounter
-    int secondsElapsed = 0;
+    public int secondsElapsed = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -28,7 +28,7 @@ public class TimerBehavior : MonoBehaviour
         gameManager.finalTime = formatSecondsToTime(secondsElapsed);
 
         // -- TOAST INTEGRITY --
-        
+
         //write current toast integrity to the game manager
         gameManager.toastIntegrity = currentToastIntegrity();
     }
@@ -59,14 +59,11 @@ public class TimerBehavior : MonoBehaviour
     {
         //start at 1
         float baseIntegrity = 1;
-        Debug.Log("secondsElapsed is " + secondsElapsed + " and targetTimeInSeconds is " + gameManager.targetTimeInSeconds);
         //find the relationship of how close to 0 integrity we are (targetTimeInSeconds / secondsElapsed)
-        float percentDecayed = secondsElapsed / gameManager.targetTimeInSeconds;
-        Debug.Log("calculated percentDecayed as " + percentDecayed);
+        float percentDecayed = (float)secondsElapsed / (float)gameManager.targetTimeInSeconds;
         //subtract that proportion from 1 to find our current "integrity" as a percent
         float currentIntegrity = baseIntegrity - percentDecayed;
-        Debug.Log("calculated currentIntegity as " + currentIntegrity);
         //multiply currentIntegrity by 100 to make it a whole number between 0-100, then discard any decimal parts left
-        return currentIntegrity;
+        return Mathf.Round(currentIntegrity * 100);
     }
 }

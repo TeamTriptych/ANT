@@ -16,7 +16,7 @@ public class GameManagerBehavior : MonoBehaviour
     //the second at which toast integrity becomes %0.
     public int targetTimeInSeconds = 180;
     //public variable that stores the "integrity" of the toast as a percent. Assigned from TimerBehavior, in relation to targetSeconds variable.
-    public float toastIntegrity;
+    public float toastIntegrity = 0;
 
     // -- DIALOGUE-RELATED --
 
