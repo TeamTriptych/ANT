@@ -123,7 +123,7 @@ public class DialogueEngager : MonoBehaviour
         //First, start animation that "slides" the dialogue box down behind the HUD
         dialogueAnimator.Play("DialogueBoxDown");
     }
-    //This fct checks if the Animator is currently in any "animation" states, and flips currentlyAnimating accordingly. Does nothing if it finds an unrelated state.
+    //This fct checks if the Animator is currently in any "animation" states, and updates states accordingly. Does nothing if it finds an unrelated state.
     public void updateAnimationStates()
     {
         //check if the current state is animating up
