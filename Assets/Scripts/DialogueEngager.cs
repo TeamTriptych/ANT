@@ -27,9 +27,13 @@ public class DialogueEngager : MonoBehaviour
     public GameObject dialogueSprite;
     //acts as a public Index for iterating over the DialogueObjs List. Starts at 0, reset by advanceDialogue.
     int currentDialogueObjIndex = 0;
+
+    // -- ANIMATION-RELATED --
+
     //ref to Animator component on the dialogue Obj
     Animator dialogueAnimator;
-    
+    //boolean that tracks if the dialoguebox is animating. Toggled on by animateUpDialogue(). Toggled off after animationTime reaches 0.
+    public bool currentlyAnimating = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -43,10 +47,6 @@ public class DialogueEngager : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Debug.Log("The length of the animator's current state is " + dialogueAnimator.GetCurrentAnimatorStateInfo(0).length);
-        Debug.Log("The normalized time of the animator's current state is " + dialogueAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime);
-        Debug.Log("The speed multiplier of the animator's current state is " + dialogueAnimator.GetCurrentAnimatorStateInfo(0).speedMultiplier);
-
 
     }
 
@@ -71,14 +71,6 @@ public class DialogueEngager : MonoBehaviour
         //if the currentIndex is the final Index (Count - 1)...
         if (currentDialogueObjIndex == dialogueBGObjs.Count - 1)
         {
-            //...then flip inDialogue off
-            gameManager.inDialogue = false;
-            //and set activeDialogueEngager to null
-            gameManager.activeDialogueEngager = null;
-            //and turn off the collision for this Obstacle
-            this.gameObject.GetComponent<BoxCollider2D>().enabled = false;
-            //and hide the dialogue sprite
-            dialogueSprite.GetComponent<Image>().enabled = false;
             //and animate the dialogue box off the screen
             animateDownDialogue();
         }
@@ -122,14 +114,57 @@ public class DialogueEngager : MonoBehaviour
     {
         //play animation that "slides" the dialogue box up from behind the HUD
         dialogueAnimator.Play("DialogueBoxUp");
-    
     }
     /* Handles moving all relevant dialogue boxes below off the screen as a group. Only called one time, after the last call to advanceDialogue(). This ensures that the animation effects all dialogues
      * regardless of which is actually being displayed, allowing the player to mash through text during the animation. We could also flip a bool here if we don't want to allow mashing
      * until the animation completes.*/
     public void animateDownDialogue()
     {
-        //play animation that "slides" the dialogue box down behind the HUD
+        //First, start animation that "slides" the dialogue box down behind the HUD
         dialogueAnimator.Play("DialogueBoxDown");
+    }
+    //This fct checks if the Animator is currently in any "animation" states, and flips currentlyAnimating accordingly. Does nothing if it finds an unrelated state.
+    public void updateAnimationStates()
+    {
+        //check if the current state is animating up
+        if (dialogueAnimator.GetCurrentAnimatorStateInfo(0).IsName("DialogueBoxUp"))
+        {
+            //If it is, check if it has completed a loop yet. Use normalized time, as normalized time returns a completion percentage (less than one is not completed, more than one means we are additional frames past a loop)
+            if (dialogueAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1)
+            {
+                //if less than one, we haven't finished a loop yet. make sure currentlyAnimating is true.
+                currentlyAnimating = true;
+            }
+            else
+            {
+                //If greater than one, we've completed at least one loop, so we must be done. make sure currentlyAnimating is false.
+                currentlyAnimating = false;
+            }
+        }
+        //if the state is animating down
+        if (dialogueAnimator.GetCurrentAnimatorStateInfo(0).IsName("DialogueBoxDown"))
+        {
+            //If it is, check if it has finished.
+
+            //If it has started but hasn't finished, toggle currentlyAnimating on to lock input and prevent trying to advance dialogue while the animation plays
+            if (dialogueAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0 && dialogueAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1)
+            {
+                currentlyAnimating = true;
+            }
+            //else if the animation has finished, toggle currentlyAnimating off and wrap up dialogue.
+            else if (dialogueAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
+            {
+                currentlyAnimating = false;
+                //...then flip inDialogue off
+                gameManager.inDialogue = false;
+                //and set activeDialogueEngager to null
+                gameManager.activeDialogueEngager = null;
+                //and turn off the collision for this Obstacle
+                this.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                //and hide the dialogue sprite
+                dialogueSprite.GetComponent<Image>().enabled = false;
+            }
+            
+        }
     }
 }

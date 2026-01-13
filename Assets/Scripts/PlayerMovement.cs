@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+
 public class PlayerMovement : MonoBehaviour
 {
     //ref to singleton
@@ -54,17 +56,17 @@ public class PlayerMovement : MonoBehaviour
         {
             //store key pressed
             keyPressed = Input.inputString;
-            //then, if the keyPressed was space, correct it to SPACE
+            //then, if the keyPressed was space, correct it to "Space"
             if (keyPressed == " ")
             {
                 keyPressed = "Space";
             }
-            Debug.Log("just pressed " + keyPressed);
+            //Debug.Log("just pressed " + keyPressed);
         }
         //assign to null if key was released. Safe on null. Safe on more than one key press.
         if (keyPressed != null && keyPressed.Length == 1 && Input.GetKeyUp(keyPressed.ToLower()))
         {
-            Debug.Log("just released " + keyPressed);
+           //Debug.Log("just released " + keyPressed);
             keyPressed = null;
         }
     }
@@ -75,8 +77,8 @@ public class PlayerMovement : MonoBehaviour
         //If we are in dialogue, parse input for dialogue
         if (gameManager.inDialogue == true)
         {
-            //As long as key pressed is not null
-            if (keyPressed != null)
+            //As long as key pressed is not null AND the active Dialogue Animator is not currently animating the dialogue...
+            if (keyPressed != null && gameManager.activeDialogueEngager.currentlyAnimating == false)
             {
                 //advance whatever dialogue is currently up
                 gameManager.activeDialogueEngager.advanceDialogue();
@@ -92,7 +94,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (keyPressed == leftInputs[currentIndex] || keyPressed == leftInputs[currentIndex].ToUpper())
                 {
-                    Debug.Log("detected a leftFoot input");
+                    //Debug.Log("detected a leftFoot input");
                     //if y velocity is currently negative, clamp it to 0 min
                     this.gameObject.GetComponent<Rigidbody2D>().linearVelocityY = Mathf.Clamp(this.gameObject.GetComponent<Rigidbody2D>().linearVelocityY, 0, maxLinearVelocity);
                     //trigger the jump function of the L Ant at the same Index as the input
@@ -104,7 +106,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (keyPressed == rightInputs[currentIndex] || keyPressed == rightInputs[currentIndex].ToUpper())
                 {
-                    Debug.Log("detected a rightFoot input");
+                    //Debug.Log("detected a rightFoot input");
                     //if y velocity is currently pos, clamp it to 0 max
                     this.gameObject.GetComponent<Rigidbody2D>().linearVelocityY = Mathf.Clamp(this.gameObject.GetComponent<Rigidbody2D>().linearVelocityY, maxLinearVelocity * -1, 0);
                     //trigger the jump function of the R Ant at the same Index as the input
@@ -117,7 +119,7 @@ public class PlayerMovement : MonoBehaviour
 
         //abstract current linearVelocity. This value is then directly modified before finally being assigned back into the actual rigidbody.
         Vector2 workingLinearVelocity = this.gameObject.GetComponent<Rigidbody2D>().linearVelocity;
-        Debug.Log("current linear velocity is " + workingLinearVelocity);
+        //Debug.Log("current linear velocity is " + workingLinearVelocity);
 
         // -- PASSIVE CHANGES --
 

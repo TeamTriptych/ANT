@@ -20,7 +20,7 @@ public class GameManagerBehavior : MonoBehaviour
 
     // -- DIALOGUE-RELATED --
 
-    //bool to track if we are currently in dialogue. Flipped on by DialogueEngager; off by advanceDialogue() in DialogueEngager
+    //bool to track if we are currently in dialogue. Flipped on by colliding with a DialogueEngager; off once the DialogueBoxDown animation is confirmed finished by up in DialogueEngager
     public bool inDialogue = false;
     //ref to the active Dialogue Engager. Set when colliding with an Obstacle. Unset by advanceDialogue() in DialogueEngager.
     public DialogueEngager activeDialogueEngager = null;
@@ -55,6 +55,11 @@ public class GameManagerBehavior : MonoBehaviour
     }
     void FixedUpdate()
     {
+        //as long as there is an activeDialogueEngager, make sure it is updating its state so we know if we're in dialogue, animating dialogue, etc
+        if (activeDialogueEngager != null)
+        {
+            activeDialogueEngager.updateAnimationStates();
+        }
         //update the frameCounter
         frameCounter = frameCounter + 1;
     }
