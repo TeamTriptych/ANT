@@ -699,7 +699,7 @@ Animator:
   m_GameObject: {fileID: 956749439}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: cedffceb18b83e34184b4bb00f927b56, type: 2}
+  m_Controller: {fileID: 9100000, guid: aff1cff6e4c6c4f43972fe3ee0aaad84, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1135,7 +1135,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1421624302
+--- !u!1 &1455474305
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1143,8 +1143,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1421624304}
-  - component: {fileID: 1421624303}
+  - component: {fileID: 1455474307}
+  - component: {fileID: 1455474306}
   m_Layer: 0
   m_Name: Audio
   m_TagString: Untagged
@@ -1152,13 +1152,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!82 &1421624303
+--- !u!82 &1455474306
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1421624302}
+  m_GameObject: {fileID: 1455474305}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -1249,17 +1249,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!4 &1421624304
+--- !u!4 &1455474307
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1421624302}
+  m_GameObject: {fileID: 1455474305}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.12623, y: -27.04929, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -36.2484, y: -11.2922, z: 0}
+  m_LocalScale: {x: 47.50265, y: 37.183598, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1641,8 +1641,8 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 956749443}
+  - {fileID: 1455474307}
   - {fileID: 1017249477}
-  - {fileID: 1421624304}
   - {fileID: 68765087}
   - {fileID: 1544234279}
   - {fileID: 1483080314}
