@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     //the minimum possible velocity for the X Vector. Should be 0 so we never go backwards.
     float minXLinearVelocity = 0f;
     //maximum possible velocity for either vector. Y uses this value after multiplying it by -1 as its minimum, so that it functions as a max negative velocity for Y.
-    float maxLinearVelocity = 1.25f;
+    float maxLinearVelocity = 1.5f;
     //This boolean determines if movement is fixed (provides a static force factor when input is registered), or dynamic (ants provide less force the closer they are to the apex of their jump)
     public bool fixedMovement = false;
 
@@ -147,11 +147,15 @@ public class PlayerMovement : MonoBehaviour
             //force yVelocity to 0
             workingLinearVelocity.y = 0;
         }
-
+        //abstract currentPos for easy referencing
+        Vector3 currentPos = this.gameObject.GetComponent<Transform>().position;
+        //assign Z pos equal to y pos
+        this.gameObject.GetComponent<Transform>().position = new Vector3(currentPos.x, currentPos.y, currentPos.y);
+        
         // -- ASSIGNMENT TO RIGIDBODY --
 
         //actually assign the workingLinearVelocity back to the Rigidbody2D
         this.gameObject.GetComponent<Rigidbody2D>().linearVelocity = workingLinearVelocity;
-        //Debug.Log("current linearVelocity is " + workingLinearVelocity);
+        Debug.Log("current linearVelocity is " + workingLinearVelocity);
     }
 }
