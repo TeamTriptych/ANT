@@ -25,6 +25,15 @@ public class GameManagerBehavior : MonoBehaviour
     //ref to the active Dialogue Engager. Set when colliding with an Obstacle. Unset by advanceDialogue() in DialogueEngager.
     public DialogueEngager activeDialogueEngager = null;
 
+    // -- AUDIO-RELATED --
+
+    //public bool for tracking if the fadeTimer is active. flippped by
+    public bool isFading = false;
+    //time in frames that it will take for the audio volume to reach 0.
+    public int desiredFadeTime = 60;
+    //tracks how far we are into the fade. Set to desiredFadeTime during Start()
+    public int currentFadeTime;
+
     //called when the script is loaded
     private void Awake()
     {
@@ -45,7 +54,8 @@ public class GameManagerBehavior : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        //Set currentFadeTime to desiredFadeTime
+        currentFadeTime = desiredFadeTime;
     }
 
     // Update is called once per frame
@@ -55,12 +65,38 @@ public class GameManagerBehavior : MonoBehaviour
     }
     void FixedUpdate()
     {
+        // -- DIALOGUE --
+
         //as long as there is an activeDialogueEngager, make sure it is updating its state so we know if we're in dialogue, animating dialogue, etc
         if (activeDialogueEngager != null)
         {
             activeDialogueEngager.updateAnimationStates();
         }
+
         //update the frameCounter
         frameCounter = frameCounter + 1;
+
+        // -- AUDIO --
+
+        //as long as isFading is true
+        if (isFading == true)
+        {
+            Debug.Log("attempting to fade");
+            //first check if the currentFadeTime was previoiusly reduced to 0
+            if (currentFadeTime == 0)
+            {
+                //flip isFading so that we don't continue this process
+                isFading = false;
+                //and stop the audio clip
+                this.gameObject.GetComponent<AudioSource>().Stop();
+            }
+            else
+            {
+                //set currentVolume to currentFadeTime divided by desiredFadeTime (proportion of how much left of the fade we have to complete)
+                this.gameObject.GetComponent<AudioSource>().volume = currentFadeTime / desiredFadeTime;
+                //then subtract from currentFadeTime
+                currentFadeTime = currentFadeTime - 1;
+            }
+        }           
     }
 }
