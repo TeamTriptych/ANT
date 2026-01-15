@@ -147,10 +147,6 @@ public class PlayerMovement : MonoBehaviour
             //force yVelocity to 0
             workingLinearVelocity.y = 0;
         }
-        //abstract currentPos for easy referencing
-        Vector3 currentPos = this.gameObject.GetComponent<Transform>().position;
-        //assign Z pos equal to y pos
-        this.gameObject.GetComponent<Transform>().position = new Vector3(currentPos.x, currentPos.y, currentPos.y);
         
         // -- ASSIGNMENT TO RIGIDBODY --
 
