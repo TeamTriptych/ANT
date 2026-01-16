@@ -4691,9 +4691,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\t\t\t\t\t*whine*\n\t                   *pant pant*\t\t\t\t\t\tarf?\n*sniff
-    sniff sniff*\t\t\t\t*snnniiiiiffffffffffffff*\n\t\t\t\t*licks your hand*\n\t*pees
-    on a nearby tree*            \t\t\t*happy smile*"
+  m_text: '
+
+
+    *You pet the dog*'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d70ea7f0bffdf3642b86e46dcb63c822, type: 2}
   m_sharedMaterial: {fileID: 1196377359763950606, guid: d70ea7f0bffdf3642b86e46dcb63c822, type: 2}
@@ -4727,7 +4728,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -5007,8 +5008,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "*arf*\t\t\t\t\t          *woof*.\n\t\t\t* bark, bark*\n\t\t\t\t\t\t\t                     
-    *ruff*\n\t*ruff, ruff*\n\t\t\t\t\t\t\t\t*aroo*"
+  m_text: "*looks at you with big eyes* \n\t\t\t\t\t\t*whines*\n\t*sadly wags tail*\t\t\t\t\t*aroo...*\n\t\t\t\t\t*sad
+    sniffles*\n\t\t\t\t\t\t\t\t\t*dog is sad*"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d70ea7f0bffdf3642b86e46dcb63c822, type: 2}
   m_sharedMaterial: {fileID: 1196377359763950606, guid: d70ea7f0bffdf3642b86e46dcb63c822, type: 2}
@@ -7848,11 +7849,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Like all foolish humans, you think yourself a master of your environment.
-    Perhaps your immaturity blinds you - or perhaps being a mere child means you're
-    more aware of your own powerlessness than most. Your fantasies put your head
-    in the clouds - much too high to see the majesty beneath your own two feet. The
-    clock is ticking. Are you really the one in control here, Anny?
+  m_text: "* dog smiles *\n\t\t\t\t\t\t\t*woof!!*\n\t\t*happy bark*\t\t\n\t\t\t\t\t\t\t\t*looks
+    towards school*\n\t\t\t*pants affirmatively*"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d70ea7f0bffdf3642b86e46dcb63c822, type: 2}
   m_sharedMaterial: {fileID: 1196377359763950606, guid: d70ea7f0bffdf3642b86e46dcb63c822, type: 2}
