@@ -20,6 +20,11 @@ public class AntBehavior : MonoBehaviour
     public bool isLeft = true;
     //ref to Player
     GameObject playerObj;
+    //ref to hup sound
+    public AudioSource hupSound;
+    //ref to boing sound
+    public AudioSource boingSound;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -79,10 +84,16 @@ public class AntBehavior : MonoBehaviour
     }
     public void jump()
     {
+        boingSound.pitch = Random.Range(.5f, 1.5f);
+        hupSound.pitch = Random.Range(.5f, 1.5f);
         //toggle isFalling to false in case it's on
         isFalling = false;
         //toggle isJumping on so we ascend to destHeight
         isJumping = true;
+        //play hup sound
+        hupSound.Play();
+        //play boing sound
+        boingSound.Play();
 
         //if movement system is not reactive
         if (playerObj.GetComponent<PlayerMovement>().fixedMovement == true)

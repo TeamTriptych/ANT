@@ -121,7 +121,7 @@ TextureImporter:
         width: 1920
         height: 1080
       alignment: 9
-      pivot: {x: 0.5, y: 0.05}
+      pivot: {x: 0.5, y: 0.1}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -130,6 +130,28 @@ TextureImporter:
       bones: []
       spriteID: a6a579cab866946d0800000000000000
       internalID: -3005758526211007894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ANT2_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1920
+        height: 1080
+      alignment: 9
+      pivot: {x: 0.5, y: 0.075}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6268c670a77469540a681d4a1b90a655
+      internalID: -780712859
       vertices: []
       indices: 
       edges: []
@@ -149,6 +171,7 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       ANT2_0: -3005758526211007894
+      ANT2_1: -780712859
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
