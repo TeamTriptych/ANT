@@ -63,6 +63,8 @@ public class DialogueEngager : MonoBehaviour
         dialogueSprite.GetComponent<Image>().enabled = true;
         //and call the up animation
         animateUpDialogue();
+        //set the player's linear velocity to 0
+        collision.gameObject.GetComponent<Rigidbody2D>().linearVelocity = Vector3.zero;
     }
     //hides the current dialogueBGObj and dialogueTextObj, increments the Index, then shows the next. Also wraps up dialogue if we are on the last Index.
     public void advanceDialogue()
