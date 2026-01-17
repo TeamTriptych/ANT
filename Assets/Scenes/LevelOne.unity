@@ -10247,7 +10247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   maxMoveForce: 7
-  frictionFactor: 0.02
+  frictionFactor: 0.01
   fixedMovement: 0
   leftAntsList:
   - {fileID: 1740876890}
@@ -10296,6 +10296,8 @@ MonoBehaviour:
   - {fileID: 1173321370}
   - {fileID: 1638352814}
   - {fileID: 855526630}
+  playerAnimator: {fileID: 438215000}
+  lowestRunSpeed: 0.005
 --- !u!114 &731547622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24163,8 +24165,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0:00
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 094ef325e9f36094e9b3d6cda22d5994, type: 2}
+  m_sharedMaterial: {fileID: 3772108500488456467, guid: 094ef325e9f36094e9b3d6cda22d5994, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

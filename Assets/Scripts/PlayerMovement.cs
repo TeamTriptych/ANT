@@ -29,6 +29,13 @@ public class PlayerMovement : MonoBehaviour
     //public List that holds all Right Foot Ants
     public List<GameObject> rightAntsList = new List<GameObject>();
     //list of all possible inputs that should trigger the left foot
+    
+    // -- ANIMATION --
+    //ref to player animator
+    public Animator playerAnimator;
+    //the lowest value of linear velocity that plays the "running" animation, not the "standing" animation
+    public float lowestRunSpeed;
+    
     List<string> leftInputs = new List<string>()
     {
         "1", "2", "3", "4", "5", "6", "q", "w", "e", "r", "t", "y", "a", "s", "d", "f", "g", "h", "z", "x", "c", "v", "b"
@@ -121,6 +128,17 @@ public class PlayerMovement : MonoBehaviour
         Vector2 workingLinearVelocity = this.gameObject.GetComponent<Rigidbody2D>().linearVelocity;
         //Debug.Log("current linear velocity is " + workingLinearVelocity);
 
+        // -- ANIMATION CHANGES --
+
+        if (workingLinearVelocity.x < lowestRunSpeed && workingLinearVelocity.y < lowestRunSpeed)
+        {
+         playerAnimator.Play("Standing");   
+        }
+        else
+        {
+            playerAnimator.Play("Run");
+        }
+        
         // -- PASSIVE CHANGES --
 
         //Friction must be applied differently to X and Y axes. X is always reduced by friction Factor, but Y must be increased or decreased contextually depending on movement direction.
