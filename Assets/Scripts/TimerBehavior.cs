@@ -61,6 +61,8 @@ public class TimerBehavior : MonoBehaviour
         float baseIntegrity = 1;
         //find the relationship of how close to 0 integrity we are (targetTimeInSeconds / secondsElapsed)
         float percentDecayed = (float)secondsElapsed / (float)gameManager.targetTimeInSeconds;
+        //Clamp percentdecayed between 0 and 1
+        percentDecayed = Mathf.Clamp(percentDecayed, 0, 1);
         //subtract that proportion from 1 to find our current "integrity" as a percent
         float currentIntegrity = baseIntegrity - percentDecayed;
         //multiply currentIntegrity by 100 to make it a whole number between 0-100, then discard any decimal parts left
