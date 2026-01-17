@@ -722,7 +722,7 @@ Transform:
   m_GameObject: {fileID: 31964961}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 45.260002, y: 1.55, z: 0}
+  m_LocalPosition: {x: 45.260002, y: 1.24, z: 0}
   m_LocalScale: {x: 0.29692975, y: 0.29692975, z: 0.29692975}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1071,7 +1071,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AntBehavior
   isLeft: 1
   hupSound: {fileID: 77526343}
-  boingSound: {fileID: 0}
+  boingSound: {fileID: 77526342}
 --- !u!114 &77526340
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3293,7 +3293,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.000005722046, y: -0.0262928}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3303,7 +3303,7 @@ BoxCollider2D:
     drawMode: 2
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 50.432774, y: 4.7337494}
   m_EdgeRadius: 0
 --- !u!50 &282986875
 Rigidbody2D:
@@ -4879,14 +4879,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.20274928, b: 0.87169814, a: 1}
+  m_Color: {r: 0.96981126, g: 0.96981126, b: 0.96981126, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 3628366597487322370, guid: d8afd61fe9cdbf944bc5677031fb54b4, type: 3}
+  m_Sprite: {fileID: 8756431672811499349, guid: aa565be65b40d9e40be87a351a4b0905, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10043,7 +10043,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.058992267}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -10053,7 +10053,7 @@ BoxCollider2D:
     drawMode: 2
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 53.611214, y: 4.7238083}
   m_EdgeRadius: 0
 --- !u!50 &730284833
 Rigidbody2D:
@@ -11594,7 +11594,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.05}
-    oldSize: {x: 3.42, y: 9.87}
+    oldSize: {x: 3.42, y: 9.56}
     newSize: {x: 3.42, y: 9.87}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -11676,8 +11676,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 3628366597487322370, guid: d8afd61fe9cdbf944bc5677031fb54b4, type: 3}
-  m_Color: {r: 0.12641507, g: 0.29730374, b: 1, a: 1}
+  m_Sprite: {fileID: 8756431672811499349, guid: aa565be65b40d9e40be87a351a4b0905, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -23593,6 +23593,7 @@ MonoBehaviour:
   isFading: 0
   desiredFadeTime: 60
   currentFadeTime: 0
+  audioSources: []
 --- !u!4 &1724169318
 Transform:
   m_ObjectHideFlags: 0
@@ -25641,7 +25642,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.023769379, y: 0.018550396}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -25651,7 +25652,7 @@ BoxCollider2D:
     drawMode: 2
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 52.784317, y: 4.6466436}
   m_EdgeRadius: 0
 --- !u!50 &2017692449
 Rigidbody2D:

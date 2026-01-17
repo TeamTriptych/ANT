@@ -30,12 +30,6 @@ public class PlayerMovement : MonoBehaviour
     public List<GameObject> rightAntsList = new List<GameObject>();
     //list of all possible inputs that should trigger the left foot
     
-    // -- ANIMATION --
-    //ref to player animator
-    public Animator playerAnimator;
-    //the lowest value of linear velocity that plays the "running" animation, not the "standing" animation
-    public float lowestRunSpeed;
-    
     List<string> leftInputs = new List<string>()
     {
         "1", "2", "3", "4", "5", "6", "q", "w", "e", "r", "t", "y", "a", "s", "d", "f", "g", "h", "z", "x", "c", "v", "b"
@@ -52,6 +46,13 @@ public class PlayerMovement : MonoBehaviour
         //assign ref to the singleton
         gameManager = GameManagerBehavior.singleton;
     }
+
+    // -- ANIMATION --
+
+    //ref to player animator
+    public Animator playerAnimator;
+    //the lowest value of linear velocity that plays the "running" animation, not the "standing" animation
+    public float lowestRunSpeed;
 
     // Update is called once per frame
     void Update()
@@ -132,13 +133,13 @@ public class PlayerMovement : MonoBehaviour
 
         if (workingLinearVelocity.x < lowestRunSpeed && workingLinearVelocity.y < lowestRunSpeed)
         {
-         playerAnimator.Play("Standing");   
+            playerAnimator.Play("Standing");
         }
         else
         {
             playerAnimator.Play("Run");
         }
-        
+
         // -- PASSIVE CHANGES --
 
         //Friction must be applied differently to X and Y axes. X is always reduced by friction Factor, but Y must be increased or decreased contextually depending on movement direction.
@@ -171,5 +172,6 @@ public class PlayerMovement : MonoBehaviour
         //actually assign the workingLinearVelocity back to the Rigidbody2D
         this.gameObject.GetComponent<Rigidbody2D>().linearVelocity = workingLinearVelocity;
         Debug.Log("current linearVelocity is " + workingLinearVelocity);
+
     }
 }

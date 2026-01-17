@@ -33,6 +33,8 @@ public class GameManagerBehavior : MonoBehaviour
     public int desiredFadeTime = 60;
     //tracks how far we are into the fade. Set to desiredFadeTime during Start()
     public int currentFadeTime;
+    //array of all AudioSources on this instance. assigned during Start()
+    public AudioSource[] audioSources;
 
     //called when the script is loaded
     private void Awake()
@@ -56,6 +58,8 @@ public class GameManagerBehavior : MonoBehaviour
     {
         //Set currentFadeTime to desiredFadeTime
         currentFadeTime = desiredFadeTime;
+        //and assign the array of AudioSources
+        audioSources = this.gameObject.GetComponents<AudioSource>();
     }
 
     // Update is called once per frame
