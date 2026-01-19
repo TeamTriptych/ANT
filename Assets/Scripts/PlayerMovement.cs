@@ -29,7 +29,6 @@ public class PlayerMovement : MonoBehaviour
     //public List that holds all Right Foot Ants
     public List<GameObject> rightAntsList = new List<GameObject>();
     //list of all possible inputs that should trigger the left foot
-    
     List<string> leftInputs = new List<string>()
     {
         "1", "2", "3", "4", "5", "6", "q", "w", "e", "r", "t", "y", "a", "s", "d", "f", "g", "h", "z", "x", "c", "v", "b"
@@ -57,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // -- INPUT --
+        // -- POLLING INPUT --
 
         //check for any key
         if (Input.anyKeyDown == true)

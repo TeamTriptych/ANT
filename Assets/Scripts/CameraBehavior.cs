@@ -32,6 +32,7 @@ public class CameraBehavior : MonoBehaviour
         // -- FINALIZATION/ ASSIGNMENT --
 
         //move towards destination position
-        this.gameObject.GetComponent<Transform>().position = Vector3.MoveTowards(currentPos, destinationPos, .1f);
+        //this.gameObject.GetComponent<Transform>().position = Vector3.MoveTowards(currentPos, destinationPos, .1f);
+        this.GetComponent<Transform>().position = destinationPos;
     }
 }
