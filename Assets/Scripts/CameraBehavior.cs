@@ -9,10 +9,8 @@ public class CameraBehavior : MonoBehaviour
 
     // -- CAMERA-BEHAVIOR --
 
-    //How far to the right of the PLayer the camera's destination is. In other words, how far left the Player will be on screen.
-    public float cameraXOffset = 6.15f;
-    //An abstraction of the camera's final destination, equal to the Playet's X plus the offset. Updated every frame.
-    Vector3 destinationPos;
+    //establishes the hard limit on how far to the right the camera will travel. Prevents the camera from following anny into school.
+    public float maxXPos;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -26,13 +24,12 @@ public class CameraBehavior : MonoBehaviour
     {
         //abstract currentPos for easy referencing
         Vector3 currentPos = this.gameObject.GetComponent<Transform>().position;
-        //update the Camera's destination by taking the Player's x and adding the offset
-        destinationPos = new Vector3(playerObj.GetComponent<Transform>().position.x + cameraXOffset, currentPos.y, currentPos.z);
-
-        // -- FINALIZATION/ ASSIGNMENT --
-
-        //move towards destination position
-        //this.gameObject.GetComponent<Transform>().position = Vector3.MoveTowards(currentPos, destinationPos, .1f);
-        this.GetComponent<Transform>().position = destinationPos;
+        //if the camera's current x pos is beyond the maxXPos, set it to the maxXPos
+        if (this.gameObject.GetComponent<Transform>().position.x > maxXPos) 
+        {
+            Debug.Log("attempting to correct camera XPos");
+            //set x Pos to maxXPos
+            this.gameObject.GetComponent<Transform>().position = new Vector3(maxXPos, currentPos.y, currentPos.z);
+        }
     }
 }
