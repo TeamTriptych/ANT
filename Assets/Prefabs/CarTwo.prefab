@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7067312278410134126}
   - component: {fileID: 4779337597140762313}
   - component: {fileID: 7886426102990571457}
+  - component: {fileID: 3942821201841509227}
   m_Layer: 0
   m_Name: CarTwo
   m_TagString: Untagged
@@ -178,3 +179,16 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 16.98, y: 2.6955657}
   m_EdgeRadius: 0
+--- !u!114 &3942821201841509227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3693910222913723526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d85b00f4eb14428498b296d329b49a03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObstacleBehavior
+  pushbackForce: 50

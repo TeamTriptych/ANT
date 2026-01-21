@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6620866261109375672}
   - component: {fileID: 9058999547850492490}
   - component: {fileID: 6242471601456182433}
+  - component: {fileID: 5233397359530755840}
   m_Layer: 0
   m_Name: TrashCanOne
   m_TagString: Untagged
@@ -178,3 +179,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe4f6a5f50cdb864db9dc6ea50c9bbca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SetZToY
+--- !u!114 &5233397359530755840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6166108575159673551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d85b00f4eb14428498b296d329b49a03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObstacleBehavior
+  pushbackForce: 50

@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     //the minimum possible velocity for the X Vector. Should be 0 so we never go backwards.
     float minXLinearVelocity = 0f;
     //maximum possible velocity for either vector. Y uses this value after multiplying it by -1 as its minimum, so that it functions as a max negative velocity for Y.
-    float maxLinearVelocity = 1.5f;
+    public float maxLinearVelocity = 1.75f;
     //This boolean determines if movement is fixed (provides a static force factor when input is registered), or dynamic (ants provide less force the closer they are to the apex of their jump)
     public bool fixedMovement = false;
 
@@ -52,6 +52,15 @@ public class PlayerMovement : MonoBehaviour
     public Animator playerAnimator;
     //the lowest value of linear velocity that plays the "running" animation, not the "standing" animation
     public float lowestRunSpeed;
+
+    // -- COLLISION --
+
+    //bool used to track if player is experiencing a bounce from a non-ped obstacle. Toggled on by said obstacle during a collision, toggled off by timer. Disables control and some passive changes like friction.
+    public bool beingBounced = false;
+    //the amount of time in frames that the player should be in the beingBounced state.
+    public int bounceDuration = 45;
+    //timer used to track if the player is still beingBounced. Toggles off the beingBounced bool when reduced to 0. should never be altered in-editor.
+    public int currentBounceTimer;
 
     // Update is called once per frame
     void Update()
@@ -93,8 +102,8 @@ public class PlayerMovement : MonoBehaviour
                 keyPressed = null;
             }
         }
-        //else, parse input for movement
-        else
+        //else, parse input for movement as long as we are not being bounced
+        else if (beingBounced == false)
         {
             //check if keyPressed matched a leftInput
             for (int currentIndex = 0; currentIndex < leftInputs.Count; currentIndex = currentIndex + 1)
@@ -130,7 +139,7 @@ public class PlayerMovement : MonoBehaviour
 
         // -- ANIMATION CHANGES --
 
-        if (workingLinearVelocity.x < lowestRunSpeed && workingLinearVelocity.y < lowestRunSpeed)
+        if (Mathf.Abs(workingLinearVelocity.x) < lowestRunSpeed && Mathf.Abs(workingLinearVelocity.y) < lowestRunSpeed)
         {
             playerAnimator.Play("Standing");
         }
@@ -141,24 +150,51 @@ public class PlayerMovement : MonoBehaviour
 
         // -- PASSIVE CHANGES --
 
-        //Friction must be applied differently to X and Y axes. X is always reduced by friction Factor, but Y must be increased or decreased contextually depending on movement direction.
+        //Friction must be applied conditionally. It should be applied positively when vectors are negative, and negatively when vectors are positive. This ensures it always brings them towards 0.
+
         //If current yVelocity is positive...
         if (workingLinearVelocity.y > 0)
         {
            //reduce yVelocity by frictionFactor to bring it toward 0.
-           workingLinearVelocity = new Vector2(workingLinearVelocity.x - frictionFactor, workingLinearVelocity.y - frictionFactor);
+           workingLinearVelocity = new Vector2(workingLinearVelocity.x, workingLinearVelocity.y - frictionFactor);
         }
-        //if currentyVelocity is negative...
+        //if currentYVelocity is negative...
         else if (workingLinearVelocity.y < 0)
         {
             //increase yVelocity by frictionFactor to bring it toward 0.
-            workingLinearVelocity = new Vector2(workingLinearVelocity.x - frictionFactor, workingLinearVelocity.y + frictionFactor);
+            workingLinearVelocity = new Vector2(workingLinearVelocity.x, workingLinearVelocity.y + frictionFactor);
+        }
+        //If current xVelocity is positive...
+        if (workingLinearVelocity.x > 0)
+        {
+            //reduce xVelocity by frictionFactor to bring it toward 0.
+            workingLinearVelocity = new Vector2(workingLinearVelocity.x - frictionFactor, workingLinearVelocity.y);
+        }
+        //if current xVelocity is negative...
+        else if (workingLinearVelocity.x < 0)
+        {
+            //increase xVelocity by frictionFactor to bring it toward 0.
+            workingLinearVelocity = new Vector2(workingLinearVelocity.x + frictionFactor, workingLinearVelocity.y);
+        }
+        //if we are currently being bounced
+        if (beingBounced == true)
+        {
+            //reduce the currentBounceTImer by one each frame
+            currentBounceTimer = currentBounceTimer - 1;
+            //then, if it has reached 0, toggle beingBounced off
+            if (currentBounceTimer == 0)
+            {
+                beingBounced = false;
+            }
         }
 
         // -- FINAL CHANGES/ CORRECTIONS --
 
-        //clamp xVelocity between 0 and max, and yVelocity between a negative and positive max
-        workingLinearVelocity = new Vector2(Mathf.Clamp(workingLinearVelocity.x, minXLinearVelocity, maxLinearVelocity), Mathf.Clamp(workingLinearVelocity.y, maxLinearVelocity * -1, maxLinearVelocity));
+        //If we are not being bounced, clamp xVelocity between 0 and max, and yVelocity between a negative and positive max
+        if (beingBounced == false)
+        {
+            workingLinearVelocity = new Vector2(Mathf.Clamp(workingLinearVelocity.x, minXLinearVelocity, maxLinearVelocity), Mathf.Clamp(workingLinearVelocity.y, maxLinearVelocity * -1, maxLinearVelocity));
+        }
         //finally, as a double-check, if X was just clamped to 0, then that means we should be at a standstill. So, force YVelocity to 0 as well.
         if (workingLinearVelocity.x == 0)
         {
