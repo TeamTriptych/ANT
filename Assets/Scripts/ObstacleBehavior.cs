@@ -2,8 +2,10 @@ using UnityEngine;
 
 public class ObstacleBehavior : MonoBehaviour
 {
-    //how much force is apllied to the Player on collision
+    //how much force is applied to the Player on collision
     public float pushbackForce = 50;
+    // the game object that will appear when anny collides with an obstacle : ) : ) : )
+    public GameObject comicBubble;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,6 +21,10 @@ public class ObstacleBehavior : MonoBehaviour
     //this fct runs when a player collider enters this collider
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        //instantiate an "ow!" comic bubble
+        Instantiate(comicBubble, collision.gameObject.GetComponent<Transform>().position, Quaternion.identity );
+        //probably play a sound here or something idk yet
+        
         //set player's velocity to 0
         collision.gameObject.GetComponent<Rigidbody2D>().linearVelocity = Vector3.zero;
         //push them back
@@ -27,7 +33,7 @@ public class ObstacleBehavior : MonoBehaviour
         collision.gameObject.GetComponent<PlayerMovement>().beingBounced = true;
         //and set their bounceTimer equal to their bounceDuration
         collision.gameObject.GetComponent<PlayerMovement>().currentBounceTimer = collision.gameObject.GetComponent<PlayerMovement>().bounceDuration;
-
+        
         //turn off this object's collider
 
         //attempt to find a BoxCollider

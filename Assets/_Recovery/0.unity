@@ -582,6 +582,7 @@ MonoBehaviour:
   - {fileID: 15218762}
   dialogueSprite: {fileID: 671246885}
   currentlyAnimating: 0
+  comicBubble: {fileID: 4558999106072797957, guid: 4dcecea0d41230d4ca22c5d3bf3373c1, type: 3}
 --- !u!61 &31964963
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11864,6 +11865,7 @@ MonoBehaviour:
   - {fileID: 1354722040}
   dialogueSprite: {fileID: 373964219}
   currentlyAnimating: 0
+  comicBubble: {fileID: 4558999106072797957, guid: 4dcecea0d41230d4ca22c5d3bf3373c1, type: 3}
 --- !u!61 &789699006
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14052,6 +14054,7 @@ MonoBehaviour:
   - {fileID: 204101583}
   dialogueSprite: {fileID: 1669179732}
   currentlyAnimating: 0
+  comicBubble: {fileID: 4558999106072797957, guid: 4dcecea0d41230d4ca22c5d3bf3373c1, type: 3}
 --- !u!61 &934248920
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14785,6 +14788,7 @@ MonoBehaviour:
   - {fileID: 1277232765}
   dialogueSprite: {fileID: 470140969}
   currentlyAnimating: 0
+  comicBubble: {fileID: 4558999106072797957, guid: 4dcecea0d41230d4ca22c5d3bf3373c1, type: 3}
 --- !u!61 &975336346
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15481,6 +15485,7 @@ MonoBehaviour:
   - {fileID: 1529308957}
   dialogueSprite: {fileID: 24180132}
   currentlyAnimating: 0
+  comicBubble: {fileID: 4558999106072797957, guid: 4dcecea0d41230d4ca22c5d3bf3373c1, type: 3}
 --- !u!61 &1028490796
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17409,6 +17414,7 @@ MonoBehaviour:
   - {fileID: 1513114531}
   dialogueSprite: {fileID: 174770053}
   currentlyAnimating: 0
+  comicBubble: {fileID: 4558999106072797957, guid: 4dcecea0d41230d4ca22c5d3bf3373c1, type: 3}
 --- !u!61 &1153445909
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17911,6 +17917,7 @@ MonoBehaviour:
   - {fileID: 1265819920}
   dialogueSprite: {fileID: 525532984}
   currentlyAnimating: 0
+  comicBubble: {fileID: 4558999106072797957, guid: 4dcecea0d41230d4ca22c5d3bf3373c1, type: 3}
 --- !u!61 &1173972924
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19672,6 +19679,7 @@ MonoBehaviour:
   - {fileID: 967439147}
   dialogueSprite: {fileID: 683118436}
   currentlyAnimating: 0
+  comicBubble: {fileID: 4558999106072797957, guid: 4dcecea0d41230d4ca22c5d3bf3373c1, type: 3}
 --- !u!61 &1351145169
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -21490,6 +21498,7 @@ MonoBehaviour:
   - {fileID: 850406575}
   dialogueSprite: {fileID: 1187880782}
   currentlyAnimating: 0
+  comicBubble: {fileID: 4558999106072797957, guid: 4dcecea0d41230d4ca22c5d3bf3373c1, type: 3}
 --- !u!61 &1512488313
 BoxCollider2D:
   m_ObjectHideFlags: 0

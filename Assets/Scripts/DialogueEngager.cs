@@ -34,6 +34,9 @@ public class DialogueEngager : MonoBehaviour
     Animator dialogueAnimator;
     //boolean that tracks if the dialoguebox is animating. Toggled on by animateUpDialogue(). Toggled off after animationTime reaches 0.
     public bool currentlyAnimating = false;
+    //prefab for the comic bubble that pops up when anny collides with a person
+    public GameObject comicBubble;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -57,6 +60,11 @@ public class DialogueEngager : MonoBehaviour
         gameManager.inDialogue = true;
         //store self as the active DialogueEngager
         gameManager.activeDialogueEngager = this;
+        
+        //instantiate the "sorry!" comic bubble
+        Instantiate(comicBubble, collision.gameObject.GetComponent<Transform>().position, Quaternion.identity );
+        //probably play a sound anderdingle please get me something funky
+        
         //show the first dialogue and text
         showDialogue(currentDialogueObjIndex);
         //show the dialogue Sprite

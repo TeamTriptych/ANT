@@ -192,3 +192,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObstacleBehavior
   pushbackForce: 50
+  comicBubble: {fileID: 4558999106072797957, guid: 32e9638fd6a149e4c8377f5574eff129, type: 3}
