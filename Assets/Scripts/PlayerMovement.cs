@@ -102,7 +102,7 @@ public class PlayerMovement : MonoBehaviour
         if (gameManager.inDialogue == true)
         {
             //As long as key pressed is not null AND the active Dialogue Animator is not currently animating the dialogue...
-            if (keyPressed != null && gameManager.activeDialogueEngager.currentlyAnimating == false)
+            if (keyPressed != null && keyPressed != "" && gameManager.activeDialogueEngager.currentlyAnimating == false)
             {
                 //advance whatever dialogue is currently up
                 gameManager.activeDialogueEngager.advanceDialogue();

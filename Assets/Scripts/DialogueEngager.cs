@@ -8,6 +8,9 @@ public class DialogueEngager : MonoBehaviour
     /* THIS SCRIPT IS RESPONSIBLE FOR ENGAGING WITH THE SPECIFIC DIAOGUES RELEVENT TO THE OBSTACLE IT IS ATTACHED TO.
      * IT HOOKS ITSELF UP TO THE REST OF THE GAME THROUGH THE GAME MANAGER AFTER A COLLISION */
 
+    //array containing all AudioSource Components attached to this object. used to play collision sfx.
+    AudioSource[] sfxSources;
+
     // -- REFERENCES --
 
     //ref to game manager
@@ -45,6 +48,9 @@ public class DialogueEngager : MonoBehaviour
         
         //assign ref to dialogue animator from the object group
         dialogueAnimator = dialogueObjGroup.GetComponent<Animator>();
+
+        //assign all AudioSources to the sfxSources array
+        sfxSources = this.gameObject.GetComponents<AudioSource>();
     }
 
     // Update is called once per frame
@@ -60,7 +66,12 @@ public class DialogueEngager : MonoBehaviour
         gameManager.inDialogue = true;
         //store self as the active DialogueEngager
         gameManager.activeDialogueEngager = this;
-        
+        //play all sfxSources
+        for (int currentIndex = 0; currentIndex < sfxSources.Length; currentIndex = currentIndex + 1)
+        {
+            sfxSources[currentIndex].Play();
+        }
+
         //instantiate the "sorry!" comic bubble
         Instantiate(comicBubble, collision.gameObject.GetComponent<Transform>().position, Quaternion.identity );
         //probably play a sound anderdingle please get me something funky
