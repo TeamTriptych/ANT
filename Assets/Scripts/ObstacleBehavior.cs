@@ -6,10 +6,13 @@ public class ObstacleBehavior : MonoBehaviour
     public float pushbackForce = 50;
     // the game object that will appear when anny collides with an obstacle : ) : ) : )
     public GameObject comicBubble;
+    //array containing all AudioSource Components attached to this object. used to play collision sfx.
+    AudioSource[] sfxSources;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        //assign all AudioSources to the sfxSources array
+        sfxSources = this.gameObject.GetComponents<AudioSource>();
     }
 
     // Update is called once per frame
@@ -21,10 +24,14 @@ public class ObstacleBehavior : MonoBehaviour
     //this fct runs when a player collider enters this collider
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //instantiate an "ow!" comic bubble
+        //instantiate a collision comic bubble
         Instantiate(comicBubble, collision.gameObject.GetComponent<Transform>().position, Quaternion.identity );
-        //probably play a sound here or something idk yet
-        
+        //play all sfxSources
+        for (int currentIndex = 0; currentIndex < sfxSources.Length; currentIndex = currentIndex + 1)
+        {
+            sfxSources[currentIndex].Play();
+        }
+
         //set player's velocity to 0
         collision.gameObject.GetComponent<Rigidbody2D>().linearVelocity = Vector3.zero;
         //push them back
