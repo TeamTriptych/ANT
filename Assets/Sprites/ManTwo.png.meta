@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f84017d81c56b7d41b6e861ce1c5c9ca
+guid: 206f2fe2874f36a43a327721db7d41e1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3218165646703269211
-    second: ManTwo_0
+      213: -197431776622358576
+    second: ManThree_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ManTwo_0
+      name: ManThree_0
       rect:
         serializedVersion: 2
         x: 10
-        y: 23
+        y: 24
         width: 454
-        height: 1299
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 1285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5aae2e71567c653d0800000000000000
-      internalID: -3218165646703269211
+      spriteID: 0dfcc0f58d4924df0800000000000000
+      internalID: -197431776622358576
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 8a8962df8e06f9c478f55eb6b700ac7f
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ManTwo_0: -3218165646703269211
+      ManThree_0: -197431776622358576
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

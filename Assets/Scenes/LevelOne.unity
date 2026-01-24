@@ -304,11 +304,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Oh, "late", are you? Hmph. I could never afford to be late - if I wasn't
-    ready by the time my parents got in the car, I wasn't getting a ride to school.
-    I'd have to walk - and that would've taken forever! Speaking of... I've really
-    got somewhere to be. I called a taxi, but got distracted talking to a stranger
-    and missed my pickup. Listen, I've gotta go. Do better, okay?
+  m_text: What, are you surprised to see me up and active at this hour? I guess you're
+    usually in school by this time, huh? Well, I actually start my day at 4 AM sharp!
+    I spend an hour meditating before I start my day, then do a quick 30 minute goat
+    yoga session. After that, I take a 20 minute face-bath in Onandaga Springs Filtered
+    Water before I head to the courts.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d70ea7f0bffdf3642b86e46dcb63c822, type: 2}
   m_sharedMaterial: {fileID: 1196377359763950606, guid: d70ea7f0bffdf3642b86e46dcb63c822, type: 2}
@@ -582,6 +582,7 @@ MonoBehaviour:
   - {fileID: 15218762}
   dialogueSprite: {fileID: 671246885}
   currentlyAnimating: 0
+  comicBubble: {fileID: 4558999106072797957, guid: 4dcecea0d41230d4ca22c5d3bf3373c1, type: 3}
 --- !u!61 &31964963
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -619,8 +620,8 @@ BoxCollider2D:
   m_Offset: {x: 0.0134990215, y: 1.4135197}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.49999997, y: 0.05}
-    oldSize: {x: 4.54, y: 13}
+    pivot: {x: 0.5, y: 0.05}
+    oldSize: {x: 4.54, y: 12.85}
     newSize: {x: 3.42, y: 9.87}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -702,8 +703,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -4535173271202270934, guid: 463968ec5f8e5a74c9651a4f98ca968b, type: 3}
-  m_Color: {r: 0.012908457, g: 0.15152073, b: 0.97735846, a: 1}
+  m_Sprite: {fileID: -197431776622358576, guid: 206f2fe2874f36a43a327721db7d41e1, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -722,7 +723,7 @@ Transform:
   m_GameObject: {fileID: 31964961}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 44.24, y: -0.14, z: 0}
+  m_LocalPosition: {x: 44.24, y: -0.55, z: 0}
   m_LocalScale: {x: 0.29692975, y: 0.29692975, z: 0.29692975}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1794,6 +1795,81 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &139688103
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 139688104}
+  - component: {fileID: 139688106}
+  - component: {fileID: 139688105}
+  m_Layer: 5
+  m_Name: ManTwo3BG
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &139688104
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139688103}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 16, y: 4, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2144910135}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.000030517578, y: -18.376022}
+  m_SizeDelta: {x: 97.425, y: 90.812}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &139688105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139688103}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 6925162072856117918, guid: 959d0f250a209344b8a22b7f60593a3a, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &139688106
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139688103}
+  m_CullTransparentMesh: 1
 --- !u!1 &174770053
 GameObject:
   m_ObjectHideFlags: 0
@@ -1868,7 +1944,7 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 174770053}
-  m_CullTransparentMesh: 1
+  m_CullTransparentMesh: 0
 --- !u!1 &179353539
 GameObject:
   m_ObjectHideFlags: 0
@@ -2292,81 +2368,6 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 204101583}
-  m_CullTransparentMesh: 1
---- !u!1 &204653139
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 204653140}
-  - component: {fileID: 204653142}
-  - component: {fileID: 204653141}
-  m_Layer: 5
-  m_Name: ManOne3BG Frame
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &204653140
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 204653139}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 16, y: 4, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1793403218}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000030517578, y: -0.000015258789}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &204653141
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 204653139}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 791336545582589345, guid: e4acca1d8034f7a46ae6224400a96aa6, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &204653142
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 204653139}
   m_CullTransparentMesh: 1
 --- !u!1 &205574351
 GameObject:
@@ -2852,6 +2853,7 @@ RectTransform:
   - {fileID: 671246886}
   - {fileID: 384105763}
   - {fileID: 1952412446}
+  - {fileID: 2144910135}
   m_Father: {fileID: 472001348}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -6271,7 +6273,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -2716879634245145537, guid: a242959314c990f448e79405b76d5c5b, type: 3}
+  m_Sprite: {fileID: -6607789422567614035, guid: 46bcdcdb7422f36469fcf16b446c1db7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6465,11 +6467,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Hey, Anny. You're in a hurry today, huh? Oh, what's that? late to school?
-    Well, you'd better hurry up then! Hm, me? Well, I'm just on my way back from
-    the tennis courts. I just finished up my 2-hour pre-work solo serve session.
-    I'm actually just about to have my protein shake before I head off to work -
-    do you want any? I've been adding  a dash of kombucha lately.
+  m_text: Whoah there! Careful, young lady! Are you okay? It's been a while since
+    I've been bumped into that hard! Where are you off to in such a rush? And where
+    are your parents? Shouldn't they be telling you to slow down a bit? Oh, you're
+    off to school? Well, that doesn't excuse you running around like this - you could
+    hurt somebody, or maybe even yourself!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d70ea7f0bffdf3642b86e46dcb63c822, type: 2}
   m_sharedMaterial: {fileID: 1196377359763950606, guid: d70ea7f0bffdf3642b86e46dcb63c822, type: 2}
@@ -6635,7 +6637,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.30481672, y: 0.08140038, z: -6.02}
+  m_LocalPosition: {x: -0.30200005, y: 0.08140038, z: -6.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6817,14 +6819,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.014950657, g: 0.87058824, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 3628366597487322370, guid: d8afd61fe9cdbf944bc5677031fb54b4, type: 3}
+  m_Sprite: {fileID: -1906281201126857047, guid: e757db861291699459fde265be20c8b9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9829,14 +9831,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.103773475, g: 0.24859652, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -4535173271202270934, guid: 463968ec5f8e5a74c9651a4f98ca968b, type: 3}
+  m_Sprite: {fileID: -197431776622358576, guid: 206f2fe2874f36a43a327721db7d41e1, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -9986,11 +9988,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: What, are you surprised to see me up and active at this hour? I guess you're
-    usually in school by this time, huh? Well, I actually start my day at 4 AM sharp!
-    I spend an hour meditating before I start my day, then do a quick 30 minute goat
-    yoga session. After that, I take a 20 minute face-bath in Onandaga Springs Filtered
-    Water before I head to the courts.
+  m_text: Oh, "late", are you? Hmph. I could never afford to be late - if I wasn't
+    ready by the time my parents got in the car, I wasn't getting a ride to school.
+    I'd have to walk - and that would've taken forever! Speaking of... I've really
+    got somewhere to be. I called a taxi, but got distracted talking to a stranger
+    and missed my pickup. Listen, I've gotta go. Do better, okay?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d70ea7f0bffdf3642b86e46dcb63c822, type: 2}
   m_sharedMaterial: {fileID: 1196377359763950606, guid: d70ea7f0bffdf3642b86e46dcb63c822, type: 2}
@@ -10119,14 +10121,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.11002114, g: 1, b: 0.10196078, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -4535173271202270934, guid: 463968ec5f8e5a74c9651a4f98ca968b, type: 3}
+  m_Sprite: {fileID: -3218165646703269211, guid: f84017d81c56b7d41b6e861ce1c5c9ca, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -10693,6 +10695,9 @@ MonoBehaviour:
   - {fileID: 855526630}
   playerAnimator: {fileID: 438215000}
   lowestRunSpeed: 0.3
+  currentlyStationary: 1
+  minAnimationSpeed: 0.25
+  maxAnimationSpeed: 2
   beingBounced: 0
   bounceDuration: 60
   currentBounceTimer: 0
@@ -11864,6 +11869,7 @@ MonoBehaviour:
   - {fileID: 1354722040}
   dialogueSprite: {fileID: 373964219}
   currentlyAnimating: 0
+  comicBubble: {fileID: 4558999106072797957, guid: 4dcecea0d41230d4ca22c5d3bf3373c1, type: 3}
 --- !u!61 &789699006
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12004,7 +12010,7 @@ Transform:
   m_GameObject: {fileID: 789699003}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 34.2, y: -0.92, z: 0}
+  m_LocalPosition: {x: 63.48, y: 0.92, z: 0}
   m_LocalScale: {x: 0.29692975, y: 0.29692975, z: 0.29692975}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14052,6 +14058,7 @@ MonoBehaviour:
   - {fileID: 204101583}
   dialogueSprite: {fileID: 1669179732}
   currentlyAnimating: 0
+  comicBubble: {fileID: 4558999106072797957, guid: 4dcecea0d41230d4ca22c5d3bf3373c1, type: 3}
 --- !u!61 &934248920
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14089,9 +14096,9 @@ BoxCollider2D:
   m_Offset: {x: -0.028326035, y: 0.68037677}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.05}
+    pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 2.78, y: 4.55}
-    newSize: {x: 3.42, y: 9.87}
+    newSize: {x: 2.78, y: 4.55}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -14172,12 +14179,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2716879634245145537, guid: a242959314c990f448e79405b76d5c5b, type: 3}
-  m_Color: {r: 0.17647055, g: 0.91764706, b: 0.18811363, a: 1}
+  m_Sprite: {fileID: -2673883791374577741, guid: aa072c24a3dfcc44080ec1155744f35f, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3.42, y: 9.87}
+  m_Size: {x: 2.78, y: 4.55}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -14785,6 +14792,7 @@ MonoBehaviour:
   - {fileID: 1277232765}
   dialogueSprite: {fileID: 470140969}
   currentlyAnimating: 0
+  comicBubble: {fileID: 4558999106072797957, guid: 4dcecea0d41230d4ca22c5d3bf3373c1, type: 3}
 --- !u!61 &975336346
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14822,9 +14830,9 @@ BoxCollider2D:
   m_Offset: {x: -0.028326035, y: 0.68037677}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.05}
+    pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 2.78, y: 4.55}
-    newSize: {x: 3.42, y: 9.87}
+    newSize: {x: 2.78, y: 4.55}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -14905,12 +14913,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2716879634245145537, guid: a242959314c990f448e79405b76d5c5b, type: 3}
+  m_Sprite: {fileID: -6607789422567614035, guid: 46bcdcdb7422f36469fcf16b446c1db7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3.42, y: 9.87}
+  m_Size: {x: 2.78, y: 4.55}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -15481,6 +15489,7 @@ MonoBehaviour:
   - {fileID: 1529308957}
   dialogueSprite: {fileID: 24180132}
   currentlyAnimating: 0
+  comicBubble: {fileID: 4558999106072797957, guid: 4dcecea0d41230d4ca22c5d3bf3373c1, type: 3}
 --- !u!61 &1028490796
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16483,81 +16492,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1108919474
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1108919475}
-  - component: {fileID: 1108919477}
-  - component: {fileID: 1108919476}
-  m_Layer: 5
-  m_Name: ManOne3BG
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1108919475
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1108919474}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 16, y: 4, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1793403218}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000030517578, y: -18.376022}
-  m_SizeDelta: {x: 97.425, y: 90.812}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1108919476
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1108919474}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 6925162072856117918, guid: 959d0f250a209344b8a22b7f60593a3a, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1108919477
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1108919474}
-  m_CullTransparentMesh: 1
 --- !u!1 &1111543271
 GameObject:
   m_ObjectHideFlags: 0
@@ -17398,17 +17332,18 @@ MonoBehaviour:
   dialogueBGObjs:
   - {fileID: 713760832}
   - {fileID: 752030212}
-  - {fileID: 1108919474}
+  - {fileID: 0}
   dialogueBGFrameObjs:
   - {fileID: 1704609267}
   - {fileID: 1893686788}
-  - {fileID: 204653139}
+  - {fileID: 0}
   dialogueTextObjs:
   - {fileID: 511464121}
   - {fileID: 678063855}
-  - {fileID: 1513114531}
+  - {fileID: 0}
   dialogueSprite: {fileID: 174770053}
   currentlyAnimating: 0
+  comicBubble: {fileID: 4558999106072797957, guid: 4dcecea0d41230d4ca22c5d3bf3373c1, type: 3}
 --- !u!61 &1153445909
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17911,6 +17846,7 @@ MonoBehaviour:
   - {fileID: 1265819920}
   dialogueSprite: {fileID: 525532984}
   currentlyAnimating: 0
+  comicBubble: {fileID: 4558999106072797957, guid: 4dcecea0d41230d4ca22c5d3bf3373c1, type: 3}
 --- !u!61 &1173972924
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17949,7 +17885,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.05}
-    oldSize: {x: 3.42, y: 9.87}
+    oldSize: {x: 3.42, y: 9.45}
     newSize: {x: 3.42, y: 9.87}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -18031,8 +17967,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 3628366597487322370, guid: d8afd61fe9cdbf944bc5677031fb54b4, type: 3}
-  m_Color: {r: 0.12549019, g: 1, b: 0.2770146, a: 1}
+  m_Sprite: {fileID: -1906281201126857047, guid: e757db861291699459fde265be20c8b9, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -18051,7 +17987,7 @@ Transform:
   m_GameObject: {fileID: 1173972921}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 60.96, y: 0.58, z: 0}
+  m_LocalPosition: {x: 34.7, y: 0.58, z: 0}
   m_LocalScale: {x: 0.29692975, y: 0.29692975, z: 0.29692975}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18107,14 +18043,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.020754695, g: 0.2752345, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -2716879634245145537, guid: a242959314c990f448e79405b76d5c5b, type: 3}
+  m_Sprite: {fileID: 6631182556230412400, guid: cd6950ffe31d54a4fa42ca8d6122c68e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -19672,6 +19608,7 @@ MonoBehaviour:
   - {fileID: 967439147}
   dialogueSprite: {fileID: 683118436}
   currentlyAnimating: 0
+  comicBubble: {fileID: 4558999106072797957, guid: 4dcecea0d41230d4ca22c5d3bf3373c1, type: 3}
 --- !u!61 &1351145169
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19709,8 +19646,8 @@ BoxCollider2D:
   m_Offset: {x: 0.0134990215, y: 1.4135197}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.49999997, y: 0.05}
-    oldSize: {x: 4.54, y: 13}
+    pivot: {x: 0.5, y: 0.05}
+    oldSize: {x: 4.54, y: 12.99}
     newSize: {x: 3.42, y: 9.87}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -19792,8 +19729,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -4535173271202270934, guid: 463968ec5f8e5a74c9651a4f98ca968b, type: 3}
-  m_Color: {r: 0.011764698, g: 0.9764706, b: 0.043807447, a: 1}
+  m_Sprite: {fileID: -3218165646703269211, guid: f84017d81c56b7d41b6e861ce1c5c9ca, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -19812,7 +19749,7 @@ Transform:
   m_GameObject: {fileID: 1351145166}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 71.13, y: -1.21, z: 0}
+  m_LocalPosition: {x: 71.13, y: -0.4, z: 0}
   m_LocalScale: {x: 0.29692975, y: 0.29692975, z: 0.29692975}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -20984,11 +20921,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Whoah there! Careful, young lady! Are you okay? It's been a while since
-    I've been bumped into that hard! Where are you off to in such a rush? And where
-    are your parents? Shouldn't they be telling you to slow down a bit? Oh, you're
-    off to school? Well, that doesn't excuse you running around like this - you could
-    hurt somebody, or maybe even yourself!
+  m_text: Hey, Anny. You're in a hurry today, huh? Oh, what's that? late to school?
+    Well, you'd better hurry up then! Hm, me? Well, I'm just on my way back from
+    the tennis courts. I just finished up my 2-hour pre-work solo serve session.
+    I'm actually just about to have my protein shake before I head off to work -
+    do you want any? I've been adding  a dash of kombucha lately.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d70ea7f0bffdf3642b86e46dcb63c822, type: 2}
   m_sharedMaterial: {fileID: 1196377359763950606, guid: d70ea7f0bffdf3642b86e46dcb63c822, type: 2}
@@ -21490,6 +21427,7 @@ MonoBehaviour:
   - {fileID: 850406575}
   dialogueSprite: {fileID: 1187880782}
   currentlyAnimating: 0
+  comicBubble: {fileID: 4558999106072797957, guid: 4dcecea0d41230d4ca22c5d3bf3373c1, type: 3}
 --- !u!61 &1512488313
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -21527,9 +21465,9 @@ BoxCollider2D:
   m_Offset: {x: -0.028326035, y: 0.68037677}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.05}
+    pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 2.78, y: 4.55}
-    newSize: {x: 3.42, y: 9.87}
+    newSize: {x: 2.78, y: 4.55}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -21610,12 +21548,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2716879634245145537, guid: a242959314c990f448e79405b76d5c5b, type: 3}
-  m_Color: {r: 0, g: 0.26756543, b: 0.98490566, a: 1}
+  m_Sprite: {fileID: 6631182556230412400, guid: cd6950ffe31d54a4fa42ca8d6122c68e, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3.42, y: 9.87}
+  m_Size: {x: 2.78, y: 4.55}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -21636,147 +21574,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1513114531
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1513114532}
-  - component: {fileID: 1513114534}
-  - component: {fileID: 1513114533}
-  m_Layer: 5
-  m_Name: ManOne3Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1513114532
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1513114531}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1793403218}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1, y: -5}
-  m_SizeDelta: {x: 1499.634, y: 303.847}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1513114533
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1513114531}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: Finally, I flash-fry two kale-flax onigiri in coconut oil , drink my kombucha
-    protein smoothie, and then bike 6 miles to the office. I always drop off the
-    extra onigiri for the stray cats under the bridge, too. I just can't stand to
-    waste my time, you know? Oh, right, you had to go, didn't you? I'd give you a
-    lift on my bike, but the weight-ID won't work unless I'm the only one on it.
-    Well, good luck!
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d70ea7f0bffdf3642b86e46dcb63c822, type: 2}
-  m_sharedMaterial: {fileID: 1196377359763950606, guid: d70ea7f0bffdf3642b86e46dcb63c822, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 48
-  m_fontSizeBase: 48
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_TextWrappingMode: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 0
-  m_ActiveFontFeatures: 6e72656b
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_EmojiFallbackSupport: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &1513114534
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1513114531}
-  m_CullTransparentMesh: 1
 --- !u!1 &1529308957
 GameObject:
   m_ObjectHideFlags: 0
@@ -23890,14 +23687,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.08644779, g: 1, b: 0.019607842, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -2716879634245145537, guid: a242959314c990f448e79405b76d5c5b, type: 3}
+  m_Sprite: {fileID: -2673883791374577741, guid: aa072c24a3dfcc44080ec1155744f35f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -24953,44 +24750,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1777146573}
   m_CullTransparentMesh: 1
---- !u!1 &1793403217
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1793403218}
-  m_Layer: 5
-  m_Name: ManOne3
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1793403218
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1793403217}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1108919475}
-  - {fileID: 1513114532}
-  - {fileID: 204653140}
-  m_Father: {fileID: 1988081132}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1817980028
 GameObject:
   m_ObjectHideFlags: 0
@@ -25115,6 +24874,147 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &1835746004
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1835746005}
+  - component: {fileID: 1835746007}
+  - component: {fileID: 1835746006}
+  m_Layer: 5
+  m_Name: ManTwo3Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1835746005
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1835746004}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2144910135}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 1, y: -5}
+  m_SizeDelta: {x: 1499.634, y: 303.847}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1835746006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1835746004}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Finally, I flash-fry two kale-flax onigiri in coconut oil , drink my kombucha
+    protein smoothie, and then bike 6 miles to the office. I always drop off the
+    extra onigiri for the stray cats under the bridge, too. I just can't stand to
+    waste my time, you know? Oh, right, you had to go, didn't you? I'd give you a
+    lift on my bike, but the weight-ID won't work unless I'm the only one on it.
+    Well, good luck!
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: d70ea7f0bffdf3642b86e46dcb63c822, type: 2}
+  m_sharedMaterial: {fileID: 1196377359763950606, guid: d70ea7f0bffdf3642b86e46dcb63c822, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 50
+  m_fontSizeBase: 50
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1835746007
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1835746004}
+  m_CullTransparentMesh: 1
 --- !u!1 &1840953879
 GameObject:
   m_ObjectHideFlags: 0
@@ -26024,6 +25924,81 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1975566372
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1975566373}
+  - component: {fileID: 1975566375}
+  - component: {fileID: 1975566374}
+  m_Layer: 5
+  m_Name: ManTwo3BG Frame
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1975566373
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1975566372}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 16, y: 4, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2144910135}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.000030517578, y: -0.000015258789}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1975566374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1975566372}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 791336545582589345, guid: e4acca1d8034f7a46ae6224400a96aa6, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1975566375
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1975566372}
+  m_CullTransparentMesh: 1
 --- !u!1 &1984492060
 GameObject:
   m_ObjectHideFlags: 0
@@ -26146,7 +26121,6 @@ RectTransform:
   - {fileID: 174770054}
   - {fileID: 1038657559}
   - {fileID: 1866406255}
-  - {fileID: 1793403218}
   m_Father: {fileID: 472001348}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -27093,7 +27067,7 @@ Transform:
   m_GameObject: {fileID: 2083067606}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.30481672, y: 0.08140038, z: -6.02}
+  m_LocalPosition: {x: -0.30200005, y: 0.08140038, z: -6.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -28032,6 +28006,44 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2142835143}
   m_CullTransparentMesh: 1
+--- !u!1 &2144910134
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2144910135}
+  m_Layer: 5
+  m_Name: ManTwo3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2144910135
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2144910134}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 139688104}
+  - {fileID: 1835746005}
+  - {fileID: 1975566373}
+  m_Father: {fileID: 219998348}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1792391561930328357
 PrefabInstance:
   m_ObjectHideFlags: 0

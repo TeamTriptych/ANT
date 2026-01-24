@@ -11,7 +11,7 @@ public class FinalTimeBehavior : MonoBehaviour
         //assign ref to singleton
         gameManager = GameManagerBehavior.singleton;
         //on start, display the finalTime logged in the gameManager
-        this.gameObject.GetComponent<TextMeshPro>().text = "FINAL TIME: \n" + gameManager.finalTime;
+        this.gameObject.GetComponent<TextMeshPro>().text = "FINAL TIME: " + gameManager.finalTime;
     }
 
     // Update is called once per frame

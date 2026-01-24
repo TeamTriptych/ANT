@@ -11,7 +11,7 @@ public class FinalToastIntegrityBehavior : MonoBehaviour
         //assign ref to singleton
         gameManager = GameManagerBehavior.singleton;
         //display text 
-        this.gameObject.GetComponent<TextMeshPro>().text = "FINAL TOAST INTEGRITY: \n" + gameManager.toastIntegrity + "%";
+        this.gameObject.GetComponent<TextMeshPro>().text = "FINAL TOAST INTEGRITY: " + gameManager.toastIntegrity + "%";
     }
 
     // Update is called once per frame

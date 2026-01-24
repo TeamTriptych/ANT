@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
-using Unity.VisualScripting;
+
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -52,6 +52,14 @@ public class PlayerMovement : MonoBehaviour
     public Animator playerAnimator;
     //the lowest value of linear velocity that plays the "running" animation, not the "standing" animation
     public float lowestRunSpeed;
+    //tracks if we are stationary
+    public bool currentlyStationary = true;
+    //tracks how fast we are going relative to how fast we could be going
+    float currentProportionalVelocity = 0;
+    //minimum running animation speed
+    public float minAnimationSpeed = .5f;
+    //maximum running animation speed
+    public float maxAnimationSpeed = 1.5f;
 
     // -- COLLISION --
 
@@ -139,12 +147,29 @@ public class PlayerMovement : MonoBehaviour
 
         // -- ANIMATION CHANGES --
 
-        if (Mathf.Abs(workingLinearVelocity.x) < lowestRunSpeed && Mathf.Abs(workingLinearVelocity.y) < lowestRunSpeed)
+        //update currentProportionalSpeed
+        currentProportionalVelocity = workingLinearVelocity.x / maxLinearVelocity;
+        //if we are moving more slowly than the lowestRunSpeed, toggle isRunning on
+        if (Mathf.Abs(workingLinearVelocity.x) < lowestRunSpeed && Mathf.Abs(workingLinearVelocity.y) <= lowestRunSpeed)
         {
-            playerAnimator.Play("Standing");
+            currentlyStationary = true;
         }
+        //If we are moving faster than lowestRunSpeed
         else
         {
+            currentlyStationary = false;
+        }
+        if (currentlyStationary == true)
+        {
+            Debug.Log("stationary");
+            playerAnimator.Play("Standing");
+        }
+        //if we are not stationary, adjust animation speed
+        else
+        {
+            Debug.Log("moving");
+            //set animation speed to between min and max, in proportion to current velocity
+            playerAnimator.speed = Mathf.Lerp(minAnimationSpeed, maxAnimationSpeed, currentProportionalVelocity);
             playerAnimator.Play("Run");
         }
 
